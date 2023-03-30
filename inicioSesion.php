@@ -7,11 +7,11 @@ $psswd = $_POST['password'];
 $email = $_POST['correo'];
 
 // Nos conectamos a la base de datos
-$mysqli = new mysqli("localhost", "root", "", "tfg");
+$conexion  = new mysqli("localhost", "root", "", "tfg");
 
 // Verificar la conexión
-if ($mysqli->connect_error) {
-    die("Error de conexión: " . $mysqli->connect_error);
+if ($conexion->connect_error) {
+    die("Error de conexión: " . $conexion->connect_error);
 }
 
 // Verificamos si el usuario ya existe en la base de datos
