@@ -18,19 +18,19 @@
 
 
     <script>
-        document.addEventListener('dragstart', function(evt) {
-            if (evt.target.tagName == 'IMG') {
-                evt.preventDefault();
-            }
-        });
+    document.addEventListener('dragstart', function(evt) {
+        if (evt.target.tagName == 'IMG') {
+            evt.preventDefault();
+        }
+    });
     </script>
 
     <style>
-        * {
-            user-select: none;
-            font-family: "Pathway Gothic One";
-            font-size: 22px;
-        }
+    * {
+        user-select: none;
+        font-family: "Pathway Gothic One";
+        font-size: 22px;
+    }
     </style>
 
 </head>
@@ -40,10 +40,12 @@
         <div class="container-fluid">
             <!-- Imagen centrada en la izquierda -->
             <a class="navbar-brand" href="index.php">
-                <img src="images/logo.png" alt="Logo" width="130" height="50" class="d-inline-block align-text-top logo-img">
+                <img src="images/logo.png" alt="Logo" width="130" height="50"
+                    class="d-inline-block align-text-top logo-img">
             </a>
             <!-- Botón para menú responsive -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 

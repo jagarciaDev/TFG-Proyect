@@ -25,8 +25,11 @@
             <input type="text" id="username" name="username" autocomplete="off">
             <label for="password">Contraseña:</label>
             <input type="password" id="password" name="password" autocomplete="off">
-            <p></p>
-            <input type="submit" value="Acceder" onclick="validarFormularioLogin()">
+
+
+            <p>¿No tienes cuenta? <a href="registro.php">Registrate aquí</a>.</p>
+            <input type="submit" value="Acceder">
+
         </form>
     </div>
 
