@@ -14,7 +14,6 @@
 <body>
     <?php include("plantillaMenu.php"); ?>
 
-
 </body>
 
 </html>

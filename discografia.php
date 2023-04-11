@@ -5,28 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Discografia | Melendi Tienda Oficial</title>
+    <title>Discografía | Melendi Página Oficial</title>
 
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- Icono página -->
+    <link rel="shortcut icon" href="images/portadaUltimoDisco.ico" />
 </head>
 
 <body>
-    <div class="contaienr">
-        <div class="tilt-box-wrap">
-            <span class="t_over"></span>
-            <span class="t_over"></span>
-            <span class="t_over"></span>
-            <span class="t_over"></span>
-            <span class="t_over"></span>
-            <span class="t_over"></span>
-            <span class="t_over"></span>
-            <span class="t_over"></span>
-            <span class="t_over"></span>
-            <div class="tilt-box">
+    <?php include("plantillaMenu.php"); ?>
 
-            </div>
-        </div>
-    </div>
+
 </body>
 
 </html>

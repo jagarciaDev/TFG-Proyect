@@ -72,7 +72,7 @@
                     // Si ha iniciado sesión, muestra el nombre de usuario
                     echo '<ul class="navbar-nav ms-auto">
             <li class="nav-item">
-                <a class="nav-link" href="#">' . $_SESSION['username'] . '</a>
+                <a class="nav-link" href="login.php">' . $_SESSION['username'] . '</a>
             </li>
           </ul>';
                 } else {

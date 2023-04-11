@@ -1,32 +1,38 @@
 <?php
 
-// Recibimos los datos del formulario
+ob_start();
+
 $nombreApe = $_POST['nombre_apellidos'];
 $usuario = $_POST['username'];
 $psswd = $_POST['password'];
 $email = $_POST['correo'];
 
-// Nos conectamos a la base de datos
-$conexion  = new mysqli("localhost", "root", "", "tfg");
+$conexion = new mysqli("localhost", "root", "", "tfg");
 
 // Verificar la conexión
 if ($conexion->connect_error) {
     die("Error de conexión: " . $conexion->connect_error);
 }
 
-// Verificamos si el usuario ya existe en la base de datos
-$consulta = "SELECT * FROM usuarios WHERE usuario = '$usuario'";
+// Verificamos si el usuario o el correo ya existe en la base de datos
+$consulta = "SELECT * FROM usuarios WHERE usuario = '$usuario' OR correo = '$email'";
 $resultado = mysqli_query($conexion, $consulta);
 if (mysqli_num_rows($resultado) > 0) {
-    echo "El nombre de usuario ya existe en la base de datos";
+    echo "El nombre de usuario o el correo ya existe en la base de datos";
 } else {
     // Insertamos los datos en la base de datos
-    $consulta = "INSERT INTO usuarios (nombre_apellidos,usuario,contrasena,correo) VALUES ('$nombreApe', '$usuario', '$psswd', '$email')";
+    $consulta = "INSERT INTO usuarios (nombre_apellidos,usuario,contrasena,correo) VALUES ('$nombreApe', '$usuario','$psswd', '$email')";
     $resultado = mysqli_query($conexion, $consulta);
     if ($resultado) {
         session_start();
-        $_SESSION['username'] = "nombre de usuario"; // Reemplaza "nombre de usuario" con el nombre de usuario real
+        $_SESSION['username'] = $usuario; // Reemplaza "nombre de usuario" con el nombre de usuario real
+
+        // Enviamos toda la salida almacenada en el búfer al navegador
+        ob_end_flush();
+
+        // Redirigimos al usuario a la página index.php
         header("Location: index.php");
+        exit();
     } else {
         echo "Error al insertar el registro";
     }

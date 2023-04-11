@@ -18,7 +18,9 @@
 </head>
 
 <body>
-    <?php include("plantillaMenu.php"); ?>
+    <?php
+    include("plantillaMenu.php");
+    ?>
     <div class="container">
         <form id="formulario" action="inicioSesion.php">
 
@@ -36,7 +38,7 @@
 
 
             <p>¿Tienes cuenta? <a href="login.php">Inicia Sesión aquí</a>.</p>
-            <input type="submit" value="Acceder">
+            <input type="submit" value="Registrarse">
 
         </form>
     </div>
@@ -44,7 +46,7 @@
     <!-- Link Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script src="js/validarLogin.js"></script>
+    <script src="js/validarRegistro.js"></script>
 </body>
 
 </html>

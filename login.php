@@ -18,9 +18,12 @@
 </head>
 
 <body>
-    <?php include("plantillaMenu.php"); ?>
+    <?php
+    include("plantillaMenu.php");
+
+    ?>
     <div class="container">
-        <form id="formulario" action="inicioSesion.php">
+        <form id="formulario" action="log_in.php">
             <label for="username">Usuario:</label>
             <input type="text" id="username" name="username" autocomplete="off">
             <label for="password">Contraseña:</label>
@@ -28,7 +31,7 @@
 
 
             <p>¿No tienes cuenta? <a href="registro.php">Registrate aquí</a>.</p>
-            <input type="submit" value="Acceder">
+            <input type="submit" name="submit" value="Acceder">
 
         </form>
     </div>
