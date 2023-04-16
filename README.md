@@ -1,4 +1,4 @@
-# TFG-Proyect
+# TFG - Proyect
 <h3>🛠️ Built With</h3>
 <hr>
 <ul>
@@ -10,7 +10,7 @@
 <h3>💻 Author</h3>
 <hr>
 <ul>
-    <li type="disc">GitHub - <a href="https://github.com/jagarciaDev">@jagarciaDev</li></a>
-    <li type="disc">Linkedin - <a href="https://www.linkedin.com/in/francisco-javier-garcía-tena-38b740198/">@jagarciaDev</li></a>
-    <li type="disc">Instagram - <a href="https://www.instagram.com/mrcremita/">@mrcremita</li></a>
+    <li type="disc">GitHub - <a href="https://github.com/jagarciaDev">@jagarciaDev</a></li>
+    <li type="disc">Linkedin - <a href="https://www.linkedin.com/in/francisco-javier-garcía-tena-38b740198/">@jagarciaDev</a></li>
+    <li type="disc">Instagram - <a href="https://www.instagram.com/mrcremita/">@mrcremita</a></li>
 </ul>
