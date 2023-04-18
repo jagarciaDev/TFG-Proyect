@@ -19,10 +19,13 @@
         <h1>Discografia completa de Melendi</h1>
         <b>Álbumes de estudio</b>
         <hr>
-        <article>
-            <img src="images/2003.jpg">
-            <img src="images/disco1.jpg">
-        </article>
+        <a href="#" onclick="popup()">
+            <article>
+                <img src="images/2003.jpg">
+                <img src="images/disco1.jpg">
+            </article>
+        </a>
+
         <article>
             <img src="images/2005.jpg">
             <img src="images/disco2.jpg">
@@ -74,6 +77,7 @@
                 Reservados todos los derechos | Protección de datos | Condiciones generales</p>
         </div>
     </footer>
+    <script src="js/discografia.js"></script>
 </body>
 
 </html>

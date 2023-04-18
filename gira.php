@@ -1,3 +1,21 @@
+<?php
+// Conexión a la base de datos
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "tfg";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die("Error de conexión: " . $conn->connect_error);
+}
+
+// Consulta SELECT para recuperar los datos de la tabla
+$sql = "SELECT fecha, lugar FROM gira WHERE YEAR(fecha) = 2023 ORDER BY fecha ASC";
+$resultado = $conn->query($sql);
+if ($resultado->num_rows > 0) {
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,41 +32,66 @@
 <body>
     <?php include("plantillaMenu.php"); ?>
     <center>
-        <h1>Gira de Melendi</h1>
-        <b>Compra tus entradas 🎟️</b>
-        <hr>
+        <h1>Gira Festivales 2023</h1><br>
+
     </center>
 
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <table class="table text-center">
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Juan</td>
-                            <td>Pérez</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>María</td>
-                            <td>García</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Pablo</td>
-                            <td>Rodríguez</td>
-                        </tr>
-                    </tbody>
+                    <?php
+                    setlocale(LC_ALL, 'es_ES');
+                    while ($fila = $resultado->fetch_assoc()) {
+                        echo "<tr>
+                        <td>" . date('d M Y', strtotime($fila["fecha"])) . "</td>
+                        <td>" . $fila["lugar"] . "</td>
+                        <td>
+                        <button type='button' class='btn btn-outline-dark'>Comprar Entradas 🎟️</button>
+                        </td>
+                    </tr>";
+                    }
+                } else {
+                    echo "No se encontraron resultados.";
+                }
+                    ?>
                 </table>
             </div>
         </div>
     </div>
 
+    <center>
+        <hr>
+        <h1>Gira 20º Aniversario</h1><br>
+    </center>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <table class="table text-center">
+                    <?php
+                        $sql1 = "SELECT fecha, lugar FROM gira WHERE YEAR(fecha) <> 2023 ORDER BY fecha ASC";
+                        $resultado1 = $conn->query($sql1);
+                        if ($resultado1->num_rows > 0) {
+                            while ($fila = $resultado1->fetch_assoc()) {
+                                echo "<tr>
+                        <td>" . date('d M Y', strtotime($fila["fecha"])) . "</td>
+                        <td>" . $fila["lugar"] . "</td>
+                        <td>
+                        <button type='button' class='btn btn-outline-dark'>Comprar Entradas 🎟️</button>
+                        </td>
+                        </tr>";
+                            }
+                            echo "</table>";
+                        } else {
+                            echo "No se encontraron resultados.";
+                        }
 
-
-
-
+                        // Cerrar la conexión a la base de datos
+                        $conn->close();
+                        ?>
+            </div>
+        </div>
+    </div>
     <footer class="bg-dark text-light py-3" style="position: relative;">
         <div class="container text-center">
             <p>&copy; Copyright 2023 Sony Music Entertainment España, S.L.
