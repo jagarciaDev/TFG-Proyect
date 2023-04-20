@@ -22,7 +22,7 @@ function enviarFormulario() {
     })
         .then(response => response.text())
         .then(data => {
-            alert(data);
+            alert("Bienvenido");
             form.reset();
         })
         .catch(error => console.error(error));

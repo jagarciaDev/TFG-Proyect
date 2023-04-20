@@ -1,4 +1,16 @@
 <?php
+// Incluir plantillaMenu para verificar si el usuario está logueado
+include("plantillaMenu.php");
+
+// Verificar si el usuario está logueado
+if (isset($_SESSION['logged_in']) === true) {
+    // El usuario está logueado, habilitar el select
+    echo "<script>
+document.getElementById('select1').removeAttribute('disabled');
+</script>";
+}
+
+//Conexión a BD
 $conexion = mysqli_connect("localhost", "root", "", "tfg");
 
 $id = $_GET['id'];
@@ -22,8 +34,6 @@ $fila = mysqli_fetch_assoc($resultado);
 </head>
 
 <body>
-    <?php include("plantillaMenu.php"); ?>
-    <br>
     <?php
     $lugar = $fila['lugar'];
     echo "<center><h1>Melendi en " . $lugar;
@@ -34,27 +44,29 @@ $fila = mysqli_fetch_assoc($resultado);
             <div class="col-sm-6">
                 <form>
                     <div class="mb-3">
-                        <label for="select1" class="form-label">Select 1</label>
-                        <select class="form-select float-start" id="select1" name="select1">
-                            <option value="" selected>Selecciona una opción...</option>
-                            <option value="opcion1">Opción 1</option>
-                            <option value="opcion2">Opción 2</option>
-                            <option value="opcion3">Opción 3</option>
+                        <label for="select1" class="form-label">Front Stage</label>
+                        <select class="form-select float-start" id="select1" name="select1" disabled>
+                            <option value="" selected>Selecciona número de entradas...</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
                         </select>
+
                     </div><br><br>
                     <div class="mb-3">
-                        <label for="select2" class="form-label">Select 2</label>
+                        <label for="select2" class="form-label">Pista General</label>
                         <select class="form-select float-start" id="select2" name="select2">
-                            <option value="" selected>Selecciona una opción...</option>
+                            <option value="" selected>Selecciona número de entradas...</option>
                             <option value="opcion1">Opción 1</option>
                             <option value="opcion2">Opción 2</option>
                             <option value="opcion3">Opción 3</option>
                         </select>
                     </div><br><br>
                     <div class="mb-3">
-                        <label for="select3" class="form-label">Select 3</label>
+                        <label for="select3" class="form-label">Grada General</label>
                         <select class="form-select float-start" id="select3" name="select3">
-                            <option value="" selected>Selecciona una opción...</option>
+                            <option value="" selected>Selecciona número de entradas...</option>
                             <option value="opcion1">Opción 1</option>
                             <option value="opcion2">Opción 2</option>
                             <option value="opcion3">Opción 3</option>
@@ -62,6 +74,7 @@ $fila = mysqli_fetch_assoc($resultado);
                     </div>
                     <br><br>
                     <button type="submit" class="btn btn-primary">Comprar Entradas</button>
+                    <button type="submit" class="btn btn-warning" formaction="gira.php">Volver</button>
                 </form>
             </div>
             <div class="col-sm-6">

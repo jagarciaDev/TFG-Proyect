@@ -18,19 +18,19 @@
 
 
     <script>
-    document.addEventListener('dragstart', function(evt) {
-        if (evt.target.tagName == 'IMG') {
-            evt.preventDefault();
-        }
-    });
+        document.addEventListener('dragstart', function(evt) {
+            if (evt.target.tagName == 'IMG') {
+                evt.preventDefault();
+            }
+        });
     </script>
 
     <style>
-    * {
-        user-select: none;
-        font-family: "Pathway Gothic One";
-        font-size: 22px;
-    }
+        * {
+            user-select: none;
+            font-family: "Pathway Gothic One";
+            font-size: 22px;
+        }
     </style>
 
 </head>
@@ -40,12 +40,10 @@
         <div class="container-fluid">
             <!-- Imagen centrada en la izquierda -->
             <a class="navbar-brand" href="index.php">
-                <img src="images/logo.png" alt="Logo" width="130" height="50"
-                    class="d-inline-block align-text-top logo-img">
+                <img src="images/logo.png" alt="Logo" width="130" height="50" class="d-inline-block align-text-top logo-img">
             </a>
             <!-- Botón para menú responsive -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -65,25 +63,26 @@
                     </li>
                 </ul>
                 <?php
-                session_start();
-
                 // Verifica si el usuario ha iniciado sesión
+                session_start();
+                $_SESSION['logged_in'] = true;
                 if (isset($_SESSION['username'])) {
                     // Si ha iniciado sesión, muestra el nombre de usuario
                     echo '<ul class="navbar-nav ms-auto">
             <li class="nav-item">
-                <a class="nav-link" href="login.php">' . $_SESSION['username'] . '</a>
+                <a class="nav-link" href="index.php">' . $_SESSION['username'] . '</a>
             </li>
-          </ul>';
+        </ul>';
                 } else {
                     // Si no ha iniciado sesión, muestra el enlace para iniciar sesión o registrarse
                     echo '<ul class="navbar-nav ms-auto">
             <li class="nav-item">
-                <a class="nav-link" href="login.php">Inicia sesión o Registrate</a>
+                <a class="nav-link" href="login.php">Inicia sesión o Regístrate</a>
             </li>
-          </ul>';
+        </ul>';
                 }
                 ?>
+
             </div>
 
         </div>
