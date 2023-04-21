@@ -1,3 +1,14 @@
+<?php
+include("plantillaMenu.php");
+
+if (!isset($_SESSION["nombre_usuario"])) {
+    header("Location: login.php");
+    exit();
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +23,6 @@
 </head>
 
 <body>
-    <?php include("plantillaMenu.php"); ?>
     <footer class="bg-dark text-light py-3" style="position: relative;">
         <div class="container text-center">
             <p>&copy; Copyright 2023 Sony Music Entertainment España, S.L.

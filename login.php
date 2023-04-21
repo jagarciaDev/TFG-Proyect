@@ -23,7 +23,7 @@
 
     ?>
     <div class="container">
-        <form id="formulario" action="log_in.php">
+        <form id="formulario" method="post" action="log_in.php" onsubmit="return validarFormulario()">
             <label for="username">Usuario:</label>
             <input type="text" id="username" name="username" autocomplete="off">
             <label for="password">Contraseña:</label>

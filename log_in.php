@@ -1,35 +1,35 @@
 <?php
-// Iniciamos la sesión
 session_start();
 
-// Nos conectamos a la base de datos
-$conexion = new mysqli("localhost", "root", "", "tfg");
+$servername = "localhost";
+$username = "root";
+$passwordbd = "";
+$dbname = "tfg";
 
-// Verificar la conexión
-if ($conexion->connect_error) {
-    die("Error de conexión: " . $conexion->connect_error);
+$usuario = $_POST["username"];
+$password = $_POST["password"];
+
+// Crea la conexión a la base de datos
+$conn = new mysqli($servername, $username, $passwordbd, $dbname);
+
+// Verifica si se ha producido un error en la conexión
+if ($conn->connect_error) {
+    die("La conexión ha fallado: " . $conn->connect_error);
 }
 
-// Obtenemos los valores del usuario y la contraseña desde el formulario de inicio de sesión
-$usuario = $_POST['username'];
-$psswd = $_POST['password'];
+// Consulta para comprobar si el usuario y contraseña son válidos
+$sql = "SELECT id_usuario, usuario FROM usuarios WHERE usuario = '$usuario' AND contrasena = '$password'";
+$result = $conn->query($sql);
 
-// Preparamos una consulta segura para evitar inyección de SQL
-// Nota: Usamos marcadores de posición "?" en lugar de interpolar directamente los valores de las variables en la consulta.
-$consulta = $conexion->prepare("SELECT * FROM usuarios WHERE usuario=? AND contrasena=?");
-$consulta->bind_param("ss", $usuario, $psswd);
-$consulta->execute();
-$resultado = $consulta->get_result();
-
-// Verificamos si la consulta retornó algún resultado
-if ($resultado->num_rows > 0) {
-    // Si el usuario existe, creamos la sesión y redirigimos al usuario al index.php
-    $_SESSION['logged_in'] = true;
-    $_SESSION['username'] = $usuario;
+// Si se encontró un resultado, inicia sesión y redirige al usuario a la página de inicio
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $_SESSION["id"] = $row["id_usuario"];
+    $_SESSION["nombre_usuario"] = $row["usuario"];
+    header("Location: index.php");
 } else {
-    // Si el usuario no existe, mostramos un mensaje de error
-    echo "Datos de inicio de sesión incorrectos";
+    echo '<script>alert("El usuario y/o la contraseña son incorrectos.");</script>';
+    header("Location: login.php");
 }
 
-// Cerramos la conexión a la base de datos
-$conexion->close();
+$conn->close();
