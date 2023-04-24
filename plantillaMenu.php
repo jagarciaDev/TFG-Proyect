@@ -59,25 +59,31 @@
                 <?php
                 session_start();
                 $username = isset($_SESSION["nombre_usuario"]) ? $_SESSION["nombre_usuario"] : null;
-                if (isset($username)) {
+                $profile_picture = isset($_SESSION["fotoperfil"]) ? $_SESSION["fotoperfil"] : null;
+                $nombre = isset($_SESSION["nombre"]) ? $_SESSION["nombre"] : null;
+                $credenciales = isset($_SESSION["passwd"]) ? $_SESSION["passwd"] : null;
+                $email = isset($_SESSION["correoelec"]) ? $_SESSION["correoelec"] : null;
+
+                if (isset($username) && strlen($profile_picture) > 0) {
                     // Si ha iniciado sesión, muestra el nombre de usuario y un desplegable para cerrar sesión
                     echo '<ul class="navbar-nav ms-auto">
-                    <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <span id="nombre-usuario"><?php echo $username; ?></span>
-                </a>
-                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="miperfil.php">Mi perfil</a></li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item" href="logout.php">Cerrar sesión</a></li>
-                </ul>
-                </li>
-                </ul>';
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="data:image/jpg;base64,' . base64_encode($profile_picture) . '" alt="' . $username . '" class="rounded-circle" style="width: 25px; height: 25px;">
+                                <span id="nombre-usuario">' . $username . '</span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="miperfil.php">Mi perfil</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="logout.php">Cerrar sesión</a></li>
+                            </ul>
+                        </li>
+                    </ul>';
                 } else {
-                // Si no ha iniciado sesión, muestra el enlace para iniciar sesión o registrarse
-                echo '<ul class="navbar-nav ms-auto">
+                    // Si no ha iniciado sesión, muestra el enlace para iniciar sesión o registrarse
+                    echo '<ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="login.php">Inicia sesión o Regístrate</a>
                     </li>

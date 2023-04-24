@@ -18,14 +18,18 @@ if ($conn->connect_error) {
 }
 
 // Consulta para comprobar si el usuario y contraseña son válidos
-$sql = "SELECT id_usuario, usuario FROM usuarios WHERE usuario = '$usuario' AND contrasena = '$password'";
+$sql = "SELECT * FROM usuarios WHERE usuario = '$usuario' AND contrasena = '$password'";
 $result = $conn->query($sql);
 
 // Si se encontró un resultado, inicia sesión y redirige al usuario a la página de inicio
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
     $_SESSION["id"] = $row["id_usuario"];
+    $_SESSION["nombre"] = $row["nombre_apellidos"];
     $_SESSION["nombre_usuario"] = $row["usuario"];
+    $_SESSION["passwd"] = $row["contrasena"];
+    $_SESSION["correoelec"] = $row["correo"];
+    $_SESSION["fotoperfil"] = $row["profile_picture"];
     header("Location: index.php");
 } else {
     echo '<script>alert("El usuario y/o la contraseña son incorrectos.");</script>';
