@@ -37,7 +37,7 @@
             <input type="text" id="correo" name="correo" autocomplete="off">
 
 
-            <p>¿Tienes cuenta? <a href="login.php">Inicia Sesión aquí</a>.</p>
+            <p>¿Tienes cuenta? <a href="login.php">Inicia Sesión</a>.</p>
             <input type="submit" value="Registrarse">
 
         </form>

@@ -1,7 +1,4 @@
 <?php
-
-ob_start();
-
 $nombreApe = $_POST['nombre_apellidos'];
 $usuario = $_POST['username'];
 $psswd = $_POST['password'];
@@ -25,10 +22,7 @@ if (mysqli_num_rows($resultado) > 0) {
     $resultado = mysqli_query($conexion, $consulta);
     if ($resultado) {
         session_start();
-        $_SESSION['username'] = $usuario; // Reemplaza "nombre de usuario" con el nombre de usuario real
-
-        // Enviamos toda la salida almacenada en el búfer al navegador
-        ob_end_flush();
+        $_SESSION['nombre_usuario'] = $usuario; // Reemplaza "nombre de usuario" con el nombre de usuario real
 
         // Redirigimos al usuario a la página index.php
         header("Location: index.php");
