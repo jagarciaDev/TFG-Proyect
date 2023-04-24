@@ -22,7 +22,7 @@
     include("plantillaMenu.php");
     ?>
     <div class="container">
-        <form id="formulario" action="inicioSesion.php">
+        <form id="formulario" method="post" action="inicioSesion.php">
 
             <label for="nombre_apellidos">Nombre y Apellidos:</label>
             <input type="text" id="nombre_apellidos" name="nombre_apellidos" autocomplete="off">
@@ -36,7 +36,10 @@
             <label for="email">Correo Electrónico:</label>
             <input type="text" id="correo" name="correo" autocomplete="off">
 
+            <label for="foto">Selecciona una foto de perfil:</label>
+            <input type="file" id="foto" name="foto">
 
+            <br>
             <p>¿Tienes cuenta? <a href="login.php">Inicia Sesión</a>.</p>
             <input type="submit" value="Registrarse">
 
