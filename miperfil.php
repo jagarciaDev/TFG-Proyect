@@ -12,14 +12,11 @@ include("plantillaMenu.php");
 </head>
 
 <body>
-    <center>
-        <h1>Bienvenido a tu perfil, <?php echo $nombre ?>.</h1>
-        <br><br>
-    </center>
+    <br><br>
     <div class="container">
         <div class="row">
             <div class="col-md-3">
-                <?php echo '<img src="data:image/jpg;base64,' . base64_encode($profile_picture) . '" alt="' . $username . '" class="img-fluid rounded-circle" style="width: 300px; height: 300px;">' ?>
+                <br><?php echo '<img src="data:image/jpg;base64,' . base64_encode($profile_picture) . '" alt="' . $username . '" class="img-fluid rounded-circle" style="width: 300px; height: 300px;">' ?>
                 <hr>
                 <form action="upload.php" method="post" enctype="multipart/form-data">
                     <div class="mb-3">
@@ -29,7 +26,11 @@ include("plantillaMenu.php");
                     <button type="submit" class="btn btn-primary">Subir</button>
                 </form>
             </div>
-            <div class="col-md-9">
+            <div class="col-md-9" id="usuario-detalles">
+                <center>
+                    <h1>Bienvenido a tu perfil, <?php echo $nombre ?>.</h1>
+                    <br><br>
+                </center>
                 <form>
                     <div class="mb-3">
                         <label for="fullname" class="form-label">Nombre completo</label>
@@ -51,7 +52,6 @@ include("plantillaMenu.php");
             </div>
         </div>
     </div>
-
 </body>
 
 </html>

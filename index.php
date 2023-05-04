@@ -15,8 +15,6 @@ include("plantillaMenu.php");
 
 
 
-
-
     <footer class="bg-dark text-light py-3 fixed-bottom">
         <div class="container text-center">
             <p>&copy; Copyright 2023 Sony Music Entertainment España,
