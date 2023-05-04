@@ -33,6 +33,18 @@ $fila = mysqli_fetch_assoc($resultado);
     <!-- Icono página -->
     <link rel="shortcut icon" href="images/portadaUltimoDisco.ico" />
 
+
+    <script>
+    function validarFormulario() {
+        var select = document.getElementById("select1");
+        if (select.value == "") {
+            alert("Por favor, selecciona un número de entradas.");
+            return false;
+        }
+        return true;
+    }
+    </script>
+
 </head>
 
 <body>
@@ -44,7 +56,7 @@ $fila = mysqli_fetch_assoc($resultado);
     <div class="container">
         <div class="row">
             <div class="col-sm-6">
-                <form>
+                <form action="generarEntradas.php" method="POST" onsubmit="return validarFormulario()">
                     <div class="mb-3">
                         <label for="select1" class="form-label">Front Stage</label>
                         <select class="form-select float-start" id="select1" name="select1">
