@@ -69,7 +69,7 @@ $fila = mysqli_fetch_assoc($resultado);
 
                     </div><br><br>
                     <button type="submit" class="btn btn-primary">Comprar Entradas</button>
-                    <button type="submit" class="btn btn-warning" formaction="gira.php">Volver</button>
+                    <button type="button" class="btn btn-warning" onclick="window.history.back()">Volver</button>
                 </form>
             </div>
             <div class="col-sm-6">
@@ -79,7 +79,6 @@ $fila = mysqli_fetch_assoc($resultado);
                     echo '<img src="data:image/jpg;base64,' . base64_encode($ruta_imagen) . '" alt="Imagen"  style="width: 400px; float: right;">';
                     mysqli_close($conexion);
                     ?>
-
                 </div>
             </div>
         </div>
