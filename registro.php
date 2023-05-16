@@ -36,8 +36,6 @@
             <label for="email">Correo Electrónico:</label>
             <input type="text" id="correo" name="correo" autocomplete="off">
 
-            <label for="foto">Selecciona una foto de perfil:</label>
-            <input type="file" id="foto" name="foto">
 
             <br>
             <p>¿Tienes cuenta? <a href="login.php">Inicia Sesión</a>.</p>

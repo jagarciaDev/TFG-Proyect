@@ -19,21 +19,95 @@
         <h1>Discografia completa de Melendi</h1>
         <b>Álbumes de estudio</b>
         <hr>
-        <a href="#" onclick="popup()">
+        <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
             <article>
                 <img src="images/2003.jpg">
                 <img src="images/disco1.jpg">
             </article>
         </a>
 
-        <article>
-            <img src="images/2005.jpg">
-            <img src="images/disco2.jpg">
-        </article>
-        <article>
-            <img src="images/2006.jpg">
-            <img src="images/disco3.jpg">
-        </article>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Escucha "Sin Noticias de Holanda"</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <iframe style="border-radius:12px"
+                            src="https://open.spotify.com/embed/album/3iQWCOqfiOEh5bXqbGD9oB?utm_source=generator"
+                            width="100%" height="352" frameBorder="0" allowfullscreen=""
+                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                            loading="lazy"></iframe>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+            <article>
+                <img src="images/2005.jpg">
+                <img src="images/disco2.jpg">
+            </article>
+        </a>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Escucha "Que el cielo espere sentao"</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <iframe style="border-radius:12px"
+                            src="https://open.spotify.com/embed/album/1nRo70xzejpUW36UNp0ZF8?utm_source=generator"
+                            width="100%" height="352" frameBorder="0" allowfullscreen=""
+                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                            loading="lazy"></iframe>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+            <article>
+                <img src="images/2006.jpg">
+                <img src="images/disco3.jpg">
+            </article>
+        </a>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Escucha "Mientras no cueste trabajo"</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <iframe style="border-radius:12px"
+                            src="https://open.spotify.com/embed/album/1PkZwt6uyYDzoI3N87QgDn?utm_source=generator"
+                            width="100%" height="352" frameBorder="0" allowfullscreen=""
+                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                            loading="lazy"></iframe>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
         <article>
             <img src="images/2008.jpg">
             <img src="images/disco4.jpg">

@@ -76,7 +76,6 @@ if (!isset($_SESSION["nombre_usuario"])) {
                                     <button type="submit" class="btn btn-primary">Comprar</button>
                                 </form>
                             </div>
-
                         </div>
                     </div>
                 </div>

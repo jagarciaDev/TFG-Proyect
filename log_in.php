@@ -30,7 +30,13 @@ if ($result->num_rows > 0) {
     $_SESSION["passwd"] = $row["contrasena"];
     $_SESSION["correoelec"] = $row["correo"];
     $_SESSION["fotoperfil"] = $row["profile_picture"];
-    header("Location: index.php");
+
+    // Verifica si el usuario es administrador
+    if ($row["usuario"] == "admin") {
+        header("Location: pagina_administrador.php");
+    } else {
+        header("Location: index.php");
+    }
 } else {
     echo '<script>alert("El usuario y/o la contraseña son incorrectos.");</script>';
     header("Location: login.php");
