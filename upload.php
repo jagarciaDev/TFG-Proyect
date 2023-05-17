@@ -13,27 +13,43 @@ if (isset($_FILES['fileToUpload'])) {
 
     // Movemos el archivo a una carpeta en el servidor
     $carpetaDestino = 'uploads/';
+
+    // Verificar si la carpeta no existe y crearla
+    if (!file_exists($carpetaDestino)) {
+        mkdir($carpetaDestino, 0777, true);
+    }
+
     $rutaArchivo = $carpetaDestino . $nombreArchivo;
 
-    move_uploaded_file($archivo, $rutaArchivo);
+    if (move_uploaded_file($archivo, $rutaArchivo)) {
 
-    // Conectamos con la base de datos
-    $servidor = 'localhost';
-    $usuario = 'root';
-    $password = '';
-    $baseDatos = 'tfg';
+        // Conectamos con la base de datos
+        $servidor = 'localhost';
+        $usuario = 'root';
+        $password = '';
+        $baseDatos = 'tfg';
 
-    $conexion = mysqli_connect($servidor, $usuario, $password, $baseDatos);
+        $conexion = mysqli_connect($servidor, $usuario, $password, $baseDatos);
 
-    // Obtenemos el ID del usuario actualmente conectado
-    $id_usuario = $_SESSION['id_usuario'];
+        // Verificamos la conexión a la base de datos
+        if (!$conexion) {
+            die("Error al conectar con la base de datos: " . mysqli_connect_error());
+        }
 
-    // Actualizamos la información del usuario en la base de datos
-    $query = "UPDATE usuarios SET foto_perfil = '$rutaArchivo' WHERE id_usuario = '$id_usuario'";
+        // Obtenemos el ID del usuario actualmente conectado
+        $id_usuario = $_SESSION['id'];
 
-    mysqli_query($conexion, $query);
+        // Actualizamos la información del usuario en la base de datos
+        $query = "UPDATE usuarios SET profile_picture = '$rutaArchivo' WHERE id_usuario = '$id_usuario'";
 
-    mysqli_close($conexion);
+        if (mysqli_query($conexion, $query)) {
+            header("Location: miperfil.php");
+        } else {
+            echo "Error al actualizar la foto de perfil: " . mysqli_error($conexion);
+        }
 
-    echo "El archivo se ha subido correctamente.";
+        mysqli_close($conexion);
+    } else {
+        echo "Error al subir el archivo.";
+    }
 }

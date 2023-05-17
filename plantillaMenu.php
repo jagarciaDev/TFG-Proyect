@@ -12,6 +12,7 @@
     <!-- Link Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <script>
         document.addEventListener('dragstart', function(evt) {
             if (evt.target.tagName == 'IMG') {
@@ -55,6 +56,9 @@
                         <a class="nav-link" href="discografia.php">Discografía</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="canciondeldia.php">Canción del día</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="contacto.php">Contacto</a>
                     </li>
                 </ul>
@@ -80,15 +84,15 @@
                     echo '<span id="nombre-usuario">' . $username . '</span>
                         </a>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="miperfil.php">Mi perfil</a></li>
+                    <li><a class="dropdown-item" href="miperfil.php"><i class="bi bi-person-fill"></i> Mi perfil</a></li>
                     <li>
                         <hr class="dropdown-divider">
                     </li>
-                    <li><a class="dropdown-item" href="mispedidos.php">Mis Pedidos</a></li>
+                    <li><a class="dropdown-item" href="mispedidos.php"><i class="bi bi-bag-fill"></i> Mis Pedidos</a></li>
                     <li>
                         <hr class="dropdown-divider">
                     </li>
-                    <li><a class="dropdown-item" href="logout.php">Cerrar sesión</a></li>
+                    <li><a class="dropdown-item" href="logout.php"><i class="bi bi-door-open-fill"></i> Cerrar sesión</a></li>
                 </ul>
                 </li>
                 </ul>';
