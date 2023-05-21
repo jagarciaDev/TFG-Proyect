@@ -1,3 +1,6 @@
+<?php
+include("gira.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +8,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Gira (Administrador) | Melendi Página Oficial</title>
+
+
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <!-- Icono página -->
     <link rel="shortcut icon" href="images/portadaUltimoDisco.ico" />
@@ -13,25 +18,23 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        document.addEventListener('dragstart', function(evt) {
-            if (evt.target.tagName == 'IMG') {
-                evt.preventDefault();
-            }
-        });
+    document.addEventListener('dragstart', function(evt) {
+        if (evt.target.tagName == 'IMG') {
+            evt.preventDefault();
+        }
+    });
     </script>
     <style>
-        * {
+    * {
 
-            font-family: "Pathway Gothic One";
-            font-size: 22px;
-        }
+        font-family: "Pathway Gothic One";
+        font-size: 22px;
+    }
     </style>
 </head>
 
 <body>
-    <?php
-    include("gira.php");
-    ?>
+
     <center>
         <!-- Boton MODAL -->
         <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -50,11 +53,13 @@
                         <div class="modal-body">
                             <div class="form-group">
                                 <label for="concertName">Lugar del concierto</label>
-                                <input type="text" class="form-control" id="concertName" name="concertName" placeholder="Ingrese el nombre del concierto">
+                                <input type="text" class="form-control" id="concertName" name="concertName"
+                                    placeholder="Ingrese el nombre del concierto">
                             </div>
                             <div class="form-group">
                                 <label for="concertDate">Fecha del concierto</label>
-                                <input type="date" class="form-control" id="concertDate" name="concertDate" min="<?= date('Y-m-d') ?>">
+                                <input type="date" class="form-control" id="concertDate" name="concertDate"
+                                    min="<?= date('Y-m-d') ?>">
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -67,17 +72,6 @@
         </div>
 
     </center>
-
-    <script>
-        document.getElementById('saveChangesBtn').addEventListener('click', function() {
-            var concertName = document.getElementById('concertName').value;
-            var concertDate = document.getElementById('concertDate').value;
-
-            // Redirigir al usuario a la página PHP para insertar los datos
-            window.location.href = 'insertar_concierto.php?name=' + encodeURIComponent(concertName) + '&date=' +
-                encodeURIComponent(concertDate);
-        });
-    </script>
 </body>
 
 </html>
