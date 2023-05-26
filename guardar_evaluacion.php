@@ -8,6 +8,8 @@ if (!isset($_SESSION['id'])) {
 // Recuperar el valor seleccionado por el usuario
 $estrellas = $_POST['estrellas'];
 
+$nombredisco = $_POST['nombre_disco'];
+
 // Obtener el ID del usuario de la sesión
 $usuario_id = $_SESSION['id'];
 
@@ -25,7 +27,7 @@ if ($conn->connect_error) {
 }
 
 // Insertar el valor seleccionado en la base de datos junto con el ID del usuario
-$sql = "INSERT INTO tabla_evaluaciones (estrellas, id_usuario) VALUES ('$estrellas', '$usuario_id')";
+$sql = "INSERT INTO tabla_evaluaciones (estrellas, id_usuario, nombre_disco) VALUES ('$estrellas', '$usuario_id', '$nombredisco')";
 
 if ($conn->query($sql) === TRUE) {
     header("Location: discografia.php");;

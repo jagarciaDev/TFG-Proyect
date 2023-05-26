@@ -20,6 +20,7 @@
         <thead>
             <tr>
                 <th>Estrellas</th>
+                <th>Nombre del Disco</th>
                 <th>Nombre Usuario</th>
             </tr>
         </thead>
@@ -39,7 +40,7 @@
             }
 
             // Obtener los datos de la tabla_evaluaciones y realizar una unión con la tabla usuarios
-            $sql = "SELECT evaluacion_id, estrellas, usuarios.usuario 
+            $sql = "SELECT nombre_disco, estrellas, usuarios.usuario 
             FROM tabla_evaluaciones 
             INNER JOIN usuarios ON tabla_evaluaciones.id_usuario = usuarios.id_usuario";
             $result = $conn->query($sql);
@@ -49,6 +50,7 @@
                 while ($row = $result->fetch_assoc()) {
                     echo "<tr>";
                     echo "<td>" . $row["estrellas"] . "</td>";
+                    echo "<td>" . $row["nombre_disco"] . "</td>";
                     echo "<td>" . $row["usuario"] . "</td>";
                     echo "</tr>";
                 }

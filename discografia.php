@@ -10,41 +10,41 @@
     <!-- Icono página -->
     <link rel="shortcut icon" href="images/portadaUltimoDisco.ico" />
     <style>
-    #form {
-        width: 250px;
-        margin: 0 auto;
-        height: 50px;
-    }
+        #form {
+            width: 250px;
+            margin: 0 auto;
+            height: 50px;
+        }
 
-    #form p {
-        text-align: center;
-    }
+        #form p {
+            text-align: center;
+        }
 
-    #form label {
-        font-size: 20px;
-    }
+        #form label {
+            font-size: 20px;
+        }
 
-    input[type="radio"] {
-        display: none;
-    }
+        input[type="radio"] {
+            display: none;
+        }
 
-    label {
-        color: grey;
-    }
+        label {
+            color: grey;
+        }
 
-    .clasificacion {
-        direction: rtl;
-        unicode-bidi: bidi-override;
-    }
+        .clasificacion {
+            direction: rtl;
+            unicode-bidi: bidi-override;
+        }
 
-    label:hover,
-    label:hover~label {
-        color: orange;
-    }
+        label:hover,
+        label:hover~label {
+            color: orange;
+        }
 
-    input[type="radio"]:checked~label {
-        color: orange;
-    }
+        input[type="radio"]:checked~label {
+            color: orange;
+        }
     </style>
 </head>
 
@@ -69,11 +69,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <iframe style="border-radius:12px"
-                            src="https://open.spotify.com/embed/album/3iQWCOqfiOEh5bXqbGD9oB?utm_source=generator"
-                            width="100%" height="352" frameBorder="0" allowfullscreen=""
-                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                            loading="lazy"></iframe>
+                        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/3iQWCOqfiOEh5bXqbGD9oB?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -96,11 +92,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <iframe style="border-radius:12px"
-                            src="https://open.spotify.com/embed/album/1nRo70xzejpUW36UNp0ZF8?utm_source=generator"
-                            width="100%" height="352" frameBorder="0" allowfullscreen=""
-                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                            loading="lazy"></iframe>
+                        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/1nRo70xzejpUW36UNp0ZF8?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -123,16 +115,13 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <iframe style="border-radius:12px"
-                            src="https://open.spotify.com/embed/album/1PkZwt6uyYDzoI3N87QgDn?utm_source=generator"
-                            width="100%" height="352" frameBorder="0" allowfullscreen=""
-                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                            loading="lazy"></iframe>
+                        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/1PkZwt6uyYDzoI3N87QgDn?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                     </div>
                     <div class="modal-footer">
                         <p>Evalua el disco:</p>
                         <form action="guardar_evaluacion.php" method="POST">
                             <div class="form-group">
+                                <input type="hidden" name="nombre_disco" value="Mientras no cueste trabajo">
                                 <div class="clasificacion">
                                     <input id="radio1" type="radio" name="estrellas" value="5" class="form-check-input">
                                     <label for="radio1" class="form-check-label">★</label>
