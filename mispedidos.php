@@ -41,8 +41,10 @@
 
             // Obtener los datos de la tabla_evaluaciones y realizar una unión con la tabla usuarios
             $sql = "SELECT nombre_disco, estrellas, usuarios.usuario 
-            FROM tabla_evaluaciones 
-            INNER JOIN usuarios ON tabla_evaluaciones.id_usuario = usuarios.id_usuario";
+        FROM tabla_evaluaciones 
+        INNER JOIN usuarios ON tabla_evaluaciones.id_usuario = usuarios.id_usuario 
+        ORDER BY estrellas ASC";
+
             $result = $conn->query($sql);
 
             // Recorrer los resultados y mostrar los datos en la tabla
