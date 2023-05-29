@@ -34,17 +34,6 @@ $fila = mysqli_fetch_assoc($resultado);
     <link rel="shortcut icon" href="images/portadaUltimoDisco.ico" />
 
 
-    <script>
-    function validarFormulario() {
-        var select = document.getElementById("select1");
-        if (select.value == "") {
-            alert("Por favor, selecciona un número de entradas.");
-            return false;
-        }
-        return true;
-    }
-    </script>
-
 </head>
 
 <body>
@@ -56,10 +45,36 @@ $fila = mysqli_fetch_assoc($resultado);
     <div class="container">
         <div class="row">
             <div class="col-sm-6">
+                <br>
                 <form action="generarEntradas.php" method="POST" onsubmit="return validarFormulario()">
                     <div class="mb-3">
-                        <label for="select1" class="form-label">Front Stage</label>
-                        <select class="form-select float-start" id="select1" name="select1">
+                        <input type="hidden" name="precio_entrada1" value="55">
+                        <label for="select1" class="form-label">Front Stage (55€)</label>
+                        <select class="form-select float-start" id="select1" name="select1" onchange="calcularPrecio()">
+                            <option value="" selected>Selecciona número de entradas...</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+
+                    </div><br><br>
+
+                    <div class="mb-3">
+                        <label for="select2" class="form-label">Grada general (40€)</label>
+                        <select class="form-select float-start" id="select2" name="select2" onchange="calcularPrecio()">
+                            <option value="" selected>Selecciona número de entradas...</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+
+                    </div><br><br>
+
+                    <div class="mb-3">
+                        <label for="select3" class="form-label">Anfiteatro (35€)</label>
+                        <select class="form-select float-start" id="select3" name="select3" onchange="calcularPrecio()">
                             <option value="" selected>Selecciona número de entradas...</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -71,7 +86,11 @@ $fila = mysqli_fetch_assoc($resultado);
                     <button type="submit" class="btn btn-primary">Comprar Entradas</button>
                     <button type="button" class="btn btn-warning" onclick="window.history.back()">Volver</button>
                 </form>
+                <br>
+                <!-- Mostrar dinámicamente el precio total -->
+                <p>Precio total: <span id="totalPrice">0</span>€</p>
             </div>
+
             <div class="col-sm-6">
                 <div class="float-end">
                     <?php
@@ -92,6 +111,7 @@ $fila = mysqli_fetch_assoc($resultado);
                 Condiciones generales</p>
         </div>
     </footer>
+    <script src="js/precioEntradas.js"></script>
 </body>
 
 </html>
