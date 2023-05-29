@@ -12,16 +12,14 @@
 </head>
 
 <body>
-
     <?php
     include("plantillaMenu.php");
     ?>
-    <table class="table table-striped">
+    <table class="table table-hover">
         <thead>
             <tr>
                 <th>Estrellas</th>
                 <th>Nombre del Disco</th>
-                <th>Nombre Usuario</th>
             </tr>
         </thead>
         <tbody>
@@ -39,11 +37,13 @@
                 die("Error al conectar con la base de datos: " . $conn->connect_error);
             }
 
-            // Obtener los datos de la tabla_evaluaciones y realizar una unión con la tabla usuarios
+            $idUsuario = $_SESSION["id"];
+
             $sql = "SELECT nombre_disco, estrellas, usuarios.usuario 
-        FROM tabla_evaluaciones 
-        INNER JOIN usuarios ON tabla_evaluaciones.id_usuario = usuarios.id_usuario 
-        ORDER BY estrellas ASC";
+                    FROM tabla_evaluaciones 
+                    INNER JOIN usuarios ON tabla_evaluaciones.id_usuario = usuarios.id_usuario
+                    WHERE tabla_evaluaciones.id_usuario = $idUsuario 
+                    ORDER BY estrellas DESC";
 
             $result = $conn->query($sql);
 
@@ -51,24 +51,18 @@
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
                     echo "<tr>";
-                    echo "<td>" . $row["estrellas"] . "</td>";
+                    echo "<td>" . $row["estrellas"] . "⭐</td>";
                     echo "<td>" . $row["nombre_disco"] . "</td>";
-                    echo "<td>" . $row["usuario"] . "</td>";
                     echo "</tr>";
                 }
             } else {
                 echo "<tr><td colspan='3'>No hay evaluaciones disponibles</td></tr>";
             }
-
             // Cerrar la conexión a la base de datos
             $conn->close();
             ?>
         </tbody>
     </table>
-
-
-
-
 </body>
 
 </html>

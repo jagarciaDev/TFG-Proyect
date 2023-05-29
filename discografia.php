@@ -243,7 +243,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Escucha "Lagrimas Desordenadas"</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Escucha "Volvamos a Emperzar"</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -253,7 +253,7 @@
                         <p>Evalua el disco:</p>
                         <form action="guardar_evaluacion.php" method="POST">
                             <div class="form-group">
-                                <input type="hidden" name="nombre_disco" value="Lagrimas Desordenadas">
+                                <input type="hidden" name="nombre_disco" value="Volvamos a Emperzar">
                                 <div class="clasificacion">
                                     <input id="radio4_1" type="radio" name="estrellas" value="5" class="form-check-input">
                                     <label for="radio4_1" class="form-check-label">★</label>
@@ -288,7 +288,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Escucha "Curiosa La Cara de tu Padre"</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Escucha "Lagrimas Desordenadas"</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -298,7 +298,7 @@
                         <p>Evalua el disco:</p>
                         <form action="guardar_evaluacion.php" method="POST">
                             <div class="form-group">
-                                <input type="hidden" name="nombre_disco" value="Curiosa La Cara de tu Padre">
+                                <input type="hidden" name="nombre_disco" value="Lagrimas Desordenadas">
                                 <div class="clasificacion">
                                     <input id="radio5_1" type="radio" name="estrellas" value="5" class="form-check-input">
                                     <label for="radio5_1" class="form-check-label">★</label>
@@ -321,35 +321,226 @@
         </div>
 
         <!-- SEPARACION DISCO -->
-        <article>
-            <img src="images/2014.jpg">
-            <img src="images/disco7.jpg">
-        </article>
+        <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal6">
+            <article>
+                <img src="images/2014.jpg">
+                <img src="images/disco7.jpg">
+            </article>
+        </a>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Escucha "Un Alumno Más"</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/0Ggp1Xlj8V9dBz1nrQATgo?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    </div>
+                    <div class="modal-footer">
+                        <p>Evalua el disco:</p>
+                        <form action="guardar_evaluacion.php" method="POST">
+                            <div class="form-group">
+                                <input type="hidden" name="nombre_disco" value="Un Alumno Más">
+                                <div class="clasificacion">
+                                    <input id="radio6_1" type="radio" name="estrellas" value="5" class="form-check-input">
+                                    <label for="radio6_1" class="form-check-label">★</label>
+                                    <input id="radio6_2" type="radio" name="estrellas" value="4" class="form-check-input">
+                                    <label for="radio6_2" class="form-check-label">★</label>
+                                    <input id="radio6_3" type="radio" name="estrellas" value="3" class="form-check-input">
+                                    <label for="radio6_3" class="form-check-label">★</label>
+                                    <input id="radio6_4" type="radio" name="estrellas" value="2" class="form-check-input">
+                                    <label for="radio6_4" class="form-check-label">★</label>
+                                    <input id="radio6_5" type="radio" name="estrellas" value="1" class="form-check-input">
+                                    <label for="radio6_5" class="form-check-label">★</label>
+                                </div>
+                            </div>
+                            <input type="submit" value="Guardar Evaluación" class="btn btn-primary">
+                        </form><br>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- SEPARACION DISCO -->
-        <article>
-            <img src="images/2016.jpg">
-            <img src="images/disco8.jpg">
-        </article>
+        <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal7">
+            <article>
+                <img src="images/2016.jpg">
+                <img src="images/disco8.jpg">
+            </article>
+        </a>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal7" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Escucha "Quitate Las Gafas"</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/72w6yDcGkl4i5eW5TxJJla?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    </div>
+                    <div class="modal-footer">
+                        <p>Evalua el disco:</p>
+                        <form action="guardar_evaluacion.php" method="POST">
+                            <div class="form-group">
+                                <input type="hidden" name="nombre_disco" value="Quitate Las Gafas">
+                                <div class="clasificacion">
+                                    <input id="radio7_1" type="radio" name="estrellas" value="5" class="form-check-input">
+                                    <label for="radio7_1" class="form-check-label">★</label>
+                                    <input id="radio7_2" type="radio" name="estrellas" value="4" class="form-check-input">
+                                    <label for="radio7_2" class="form-check-label">★</label>
+                                    <input id="radio7_3" type="radio" name="estrellas" value="3" class="form-check-input">
+                                    <label for="radio7_3" class="form-check-label">★</label>
+                                    <input id="radio7_4" type="radio" name="estrellas" value="2" class="form-check-input">
+                                    <label for="radio7_4" class="form-check-label">★</label>
+                                    <input id="radio7_5" type="radio" name="estrellas" value="1" class="form-check-input">
+                                    <label for="radio7_5" class="form-check-label">★</label>
+                                </div>
+                            </div>
+                            <input type="submit" value="Guardar Evaluación" class="btn btn-primary">
+                        </form><br>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- SEPARACION DISCO -->
-        <article>
-            <img src="images/2018.jpg">
-            <img src="images/disco9.jpg">
-        </article>
+        <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal8">
+            <article>
+                <img src="images/2018.jpg">
+                <img src="images/disco9.jpg">
+            </article>
+        </a>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal8" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Escucha "Ahora"</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/2cx8aUPxZ0GvVJkJdNXeOM?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    </div>
+                    <div class="modal-footer">
+                        <p>Evalua el disco:</p>
+                        <form action="guardar_evaluacion.php" method="POST">
+                            <div class="form-group">
+                                <input type="hidden" name="nombre_disco" value="Ahora">
+                                <div class="clasificacion">
+                                    <input id="radio8_1" type="radio" name="estrellas" value="5" class="form-check-input">
+                                    <label for="radio8_1" class="form-check-label">★</label>
+                                    <input id="radio8_2" type="radio" name="estrellas" value="4" class="form-check-input">
+                                    <label for="radio8_2" class="form-check-label">★</label>
+                                    <input id="radio8_3" type="radio" name="estrellas" value="3" class="form-check-input">
+                                    <label for="radio8_3" class="form-check-label">★</label>
+                                    <input id="radio8_4" type="radio" name="estrellas" value="2" class="form-check-input">
+                                    <label for="radio8_4" class="form-check-label">★</label>
+                                    <input id="radio8_5" type="radio" name="estrellas" value="1" class="form-check-input">
+                                    <label for="radio8_5" class="form-check-label">★</label>
+                                </div>
+                            </div>
+                            <input type="submit" value="Guardar Evaluación" class="btn btn-primary">
+                        </form><br>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- SEPARACION DISCO -->
-        <article>
-            <img src="images/2019.jpg">
-            <img src="images/disco10.jpg">
-        </article>
+        <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal9">
+            <article>
+                <img src="images/2019.jpg">
+                <img src="images/disco10.jpg">
+            </article>
+        </a>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal9" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Escucha "10:20:40"</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/309uagfPtaKPwlqZgH16xD?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    </div>
+                    <div class="modal-footer">
+                        <p>Evalua el disco:</p>
+                        <form action="guardar_evaluacion.php" method="POST">
+                            <div class="form-group">
+                                <input type="hidden" name="nombre_disco" value="10:20:40">
+                                <div class="clasificacion">
+                                    <input id="radio9_1" type="radio" name="estrellas" value="5" class="form-check-input">
+                                    <label for="radio9_1" class="form-check-label">★</label>
+                                    <input id="radio9_2" type="radio" name="estrellas" value="4" class="form-check-input">
+                                    <label for="radio9_2" class="form-check-label">★</label>
+                                    <input id="radio9_3" type="radio" name="estrellas" value="3" class="form-check-input">
+                                    <label for="radio9_3" class="form-check-label">★</label>
+                                    <input id="radio9_4" type="radio" name="estrellas" value="2" class="form-check-input">
+                                    <label for="radio9_4" class="form-check-label">★</label>
+                                    <input id="radio9_5" type="radio" name="estrellas" value="1" class="form-check-input">
+                                    <label for="radio9_5" class="form-check-label">★</label>
+                                </div>
+                            </div>
+                            <input type="submit" value="Guardar Evaluación" class="btn btn-primary">
+                        </form><br>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- SEPARACION DISCO -->
         <br><br><br>
-        <article>
-            <img src="images/2021.jpg">
-            <img src="images/disco11.jpg">
-        </article>
+        <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal10">
+            <article>
+                <img src="images/2021.jpg">
+                <img src="images/disco11.jpg">
+            </article>
+        </a>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal10" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Escucha "Likes y Cicatrices"</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/450aVb02CfLVugPpSjUlWO?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    </div>
+                    <div class="modal-footer">
+                        <p>Evalua el disco:</p>
+                        <form action="guardar_evaluacion.php" method="POST">
+                            <div class="form-group">
+                                <input type="hidden" name="nombre_disco" value="Likes y Cicatrices">
+                                <div class="clasificacion">
+                                    <input id="radio10_1" type="radio" name="estrellas" value="5" class="form-check-input">
+                                    <label for="radio10_1" class="form-check-label">★</label>
+                                    <input id="radio10_2" type="radio" name="estrellas" value="4" class="form-check-input">
+                                    <label for="radio10_2" class="form-check-label">★</label>
+                                    <input id="radio10_3" type="radio" name="estrellas" value="3" class="form-check-input">
+                                    <label for="radio10_3" class="form-check-label">★</label>
+                                    <input id="radio10_4" type="radio" name="estrellas" value="2" class="form-check-input">
+                                    <label for="radio10_4" class="form-check-label">★</label>
+                                    <input id="radio10_5" type="radio" name="estrellas" value="1" class="form-check-input">
+                                    <label for="radio10_5" class="form-check-label">★</label>
+                                </div>
+                            </div>
+                            <input type="submit" value="Guardar Evaluación" class="btn btn-primary">
+                        </form><br>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <br><br><br>
     </center>
     <footer class="bg-dark text-light py-3" style="position: relative;">
