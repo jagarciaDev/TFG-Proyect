@@ -46,7 +46,8 @@ $fila = mysqli_fetch_assoc($resultado);
         <div class="row">
             <div class="col-sm-6">
                 <br>
-                <form action="generarEntradas.php" method="POST" onsubmit="return validarFormulario()">
+                <form action="comprarEntradas.php" method="POST" onsubmit="return validarFormulario()">
+                    <input type="hidden" name="totalPrice" id="totalPriceInput" value="0">
                     <div class="mb-3">
                         <input type="hidden" name="precio_entrada1" value="55">
                         <label for="select1" class="form-label">Front Stage (55€)</label>
@@ -57,7 +58,6 @@ $fila = mysqli_fetch_assoc($resultado);
                             <option value="3">3</option>
                             <option value="4">4</option>
                         </select>
-
                     </div><br><br>
 
                     <div class="mb-3">
@@ -69,7 +69,6 @@ $fila = mysqli_fetch_assoc($resultado);
                             <option value="3">3</option>
                             <option value="4">4</option>
                         </select>
-
                     </div><br><br>
 
                     <div class="mb-3">
@@ -81,14 +80,13 @@ $fila = mysqli_fetch_assoc($resultado);
                             <option value="3">3</option>
                             <option value="4">4</option>
                         </select>
-
-                    </div><br><br>
-                    <button type="submit" class="btn btn-primary">Comprar Entradas</button>
+                    </div>
+                    <br><br>
+                    <!-- Mostrar dinámicamente el precio total -->
+                    <p>Precio total: <span id="totalPrice">0</span>€</p>
+                    <button type="submit" class="btn btn-primary">Realizar Compra</button>
                     <button type="button" class="btn btn-warning" onclick="window.history.back()">Volver</button>
                 </form>
-                <br>
-                <!-- Mostrar dinámicamente el precio total -->
-                <p>Precio total: <span id="totalPrice">0</span>€</p>
             </div>
 
             <div class="col-sm-6">
