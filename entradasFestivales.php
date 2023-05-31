@@ -48,6 +48,7 @@ $fila = mysqli_fetch_assoc($resultado);
                 <br>
                 <form action="comprarEntradas.php" method="POST" onsubmit="return validarFormulario()">
                     <input type="hidden" name="totalPrice" id="totalPriceInput" value="0">
+                    <input type="hidden" name="id" id="idConcierto" value="<?php echo $id; ?>">
                     <div class="mb-3">
                         <input type="hidden" name="precio_entrada1" value="55">
                         <label for="select1" class="form-label">Front Stage (55€)</label>
@@ -102,11 +103,11 @@ $fila = mysqli_fetch_assoc($resultado);
     </div>
 
     <br>
-    <footer class="bg-dark text-light py-3 fixed-bottom">
+    <footer class="bg-dark text-light py-3" style="position: relative;">
         <div class="container text-center">
-            <p>&copy; Copyright 2023 Sony Music Entertainment España,
-                S.L. Reservados todos los derechos | Protección de datos |
-                Condiciones generales</p>
+            <p>&copy; Copyright 2023 Sony Music Entertainment España, S.L.
+                Reservados todos los derechos | Protección de datos | Condiciones generales
+            </p>
         </div>
     </footer>
     <script src="js/precioEntradas.js"></script>

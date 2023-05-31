@@ -63,6 +63,60 @@ if (isset($_POST['select1']) && isset($_POST['select2']) && isset($_POST['select
         $pdf->Cell(0, 10, 'Descripción de la entrada para select3', 0, 1, 'C');
     }
 
+    include("plantillaMenu.php");
+    // Insertar el pedido en la base de datos
+    $idUsuario = $_SESSION['id'];
+    $idConcierto = $_POST['idConcierto'];
+
+    // Conexión a la base de datos
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "tfg";
+
+    // Crear la conexión
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    // Verificar la conexión
+    if ($conn->connect_error) {
+        die("Error en la conexión: " . $conn->connect_error);
+    }
+
+    $query = "SELECT lugar, fecha FROM gira WHERE id='$idConcierto'";
+    $result = mysqli_query($conn, $query);
+
+    // Verificar si la consulta fue exitosa
+    if ($result) {
+        // Obtener el primer registro de la consulta
+        $row = mysqli_fetch_assoc($result);
+
+        // Asignar los valores a las variables correspondientes
+        $lugar = $row['lugar'];
+        $fecha = $row['fecha'];
+
+        // Liberar los recursos del resultado
+        mysqli_free_result($result);
+    } else {
+        // Manejo del error en caso de que la consulta falle
+        echo "Error al obtener los datos de lugar y fecha: " . mysqli_error($conn);
+    }
+
+
+    $total_entradas = $num_pags_select1 + $num_pags_select2 + $num_pags_select3;
+
+    // Consulta SQL para insertar el pedido
+    $sql = "INSERT INTO entradasconciertos (id_usuario, id_gira, lugar, fecha, num_entradas) 
+    VALUES ($idUsuario, $idConcierto, '$lugar', '$fecha', $total_entradas)";
+    // En el ejemplo, se asume que el id_gira para todas las entradas es 1, pero puedes ajustarlo según tu lógica de negocio
+
+    if ($conn->query($sql) === TRUE) {
+        echo "El pedido se ha guardado correctamente.";
+    } else {
+        echo "Error al guardar el pedido: " . $conn->error;
+    }
+
+    $conn->close();
+
     $pdf->Output();
 } else {
     echo "Error: Los campos no están definidos correctamente.";

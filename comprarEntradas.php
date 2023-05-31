@@ -2,11 +2,12 @@
 include("plantillaMenu.php");
 
 if (!isset($_SESSION["nombre_usuario"])) {
-    header("Location: index.php");
+    header("Location: login.php");
     exit();
 };
 
 $precioTotal = $_POST['totalPrice'];
+$idConcierto = $_POST['id'];
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +28,7 @@ $precioTotal = $_POST['totalPrice'];
 
 <body>
     <div class="container">
-        <h2 class="text-center">Resumen de la compra de entradas</h2>
+        <h2 class="text-center">Resumen de la compra de entradas:</h2>
         <hr>
         <?php
         // Obtener las cantidades seleccionadas del formulario
@@ -60,25 +61,27 @@ $precioTotal = $_POST['totalPrice'];
             echo "<input type='hidden' name='select2' value='$cantidad2'>";
             echo "<input type='hidden' name='select3' value='$cantidad3'>";
             echo "<input type='hidden' name='precio_entrada1' value='$precioEntrada1'>";
+            echo "<input type='hidden' name='idConcierto' value='$idConcierto'>";
 
             echo "<h3 class='mt-4'>Datos de la tarjeta de crédito:</h3>";
 
             // Número de tarjeta
             echo "<div class='mb-3'>";
             echo "<label for='card_number' class='form-label'>Número de tarjeta:</label>";
-            echo "<input type='text' class='form-control' id='card_number' name='card_number' pattern='[0-9]*' inputmode='numeric' required>";
+            echo "<input type='text' class='form-control' id='card_number' name='card_number' pattern='[0-9]*' inputmode='numeric' placeholder='Introduce 16 digitos' required>";
             echo "</div>";
 
             // Fecha de vencimiento
             echo "<div class='mb-3'>";
             echo "<label for='card_expiry' class='form-label'>Fecha de vencimiento:</label>";
-            echo "<input type='text' class='form-control' id='card_expiry' name='card_expiry' pattern='[0-9]*' inputmode='numeric' required>";
+            echo "<input type='date' class='form-control' id='card_expiry' name='card_expiry' min='" . date('Y-m-d') . "' required>";
             echo "</div>";
+
 
             // CVV
             echo "<div class='mb-3'>";
             echo "<label for='card_cvv' class='form-label'>CVV:</label>";
-            echo "<input type='text' class='form-control' id='card_cvv' name='card_cvv' pattern='[0-9]*' inputmode='numeric' required>";
+            echo "<input type='text' class='form-control' id='card_cvv' name='card_cvv' pattern='[0-9]*' inputmode='numeric' placeholder='Introduce 3 digitos' required>";
             echo "</div>";
 
             echo "<button type='submit' class='btn btn-primary' id='comprarEntradasBtn' disabled>Comprar entradas</button>";
@@ -90,6 +93,15 @@ $precioTotal = $_POST['totalPrice'];
         }
         ?>
     </div>
+
+    <br>
+    <footer class="bg-dark text-light py-3" style="position: relative;">
+        <div class="container text-center">
+            <p>&copy; Copyright 2023 Sony Music Entertainment España, S.L.
+                Reservados todos los derechos | Protección de datos | Condiciones generales
+            </p>
+        </div>
+    </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
