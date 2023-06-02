@@ -88,6 +88,10 @@
                     <li>
                         <hr class="dropdown-divider">
                     </li>
+                    <li><a class="dropdown-item" href="misentradas.php"><i class="bi bi-ticket-fill"></i> Mis Entradas</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
                     <li><a class="dropdown-item" href="mispedidos.php"><i class="bi bi-bag-fill"></i> Mis Pedidos</a></li>
                     <li>
                         <hr class="dropdown-divider">
