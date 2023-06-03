@@ -37,7 +37,8 @@
     <footer class="bg-dark text-light py-3" style="position: relative;">
         <div class="container text-center">
             <p>&copy; Copyright 2023 Sony Music Entertainment España, S.L.
-                Reservados todos los derechos | Protección de datos | Condiciones generales</p>
+                Reservados todos los derechos | Protección de datos | Condiciones generales
+            </p>
         </div>
     </footer>
 </body>

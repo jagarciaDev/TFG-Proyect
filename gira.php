@@ -16,29 +16,29 @@ $resultado = $conn->query($sql);
 if ($resultado->num_rows > 0) {
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
+    <!DOCTYPE html>
+    <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gira | Melendi Página Oficial</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gira | Melendi Página Oficial</title>
 
-    <!-- Icono página -->
-    <link rel="shortcut icon" href="images/portadaUltimoDisco.ico" />
-</head>
+        <!-- Icono página -->
+        <link rel="shortcut icon" href="images/portadaUltimoDisco.ico" />
+    </head>
 
-<body>
-    <?php include("plantillaMenu.php"); ?>
-    <center>
-        <h1>Gira Festivales 2023</h1><br>
+    <body>
+        <?php include("plantillaMenu.php"); ?>
+        <center>
+            <h1>Gira Festivales 2023</h1><br>
 
-    </center>
+        </center>
 
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
                 <?php
                 setlocale(LC_ALL, 'es_ES');
                 while ($fila = $resultado->fetch_assoc()) {
@@ -64,19 +64,19 @@ if ($resultado->num_rows > 0) {
             }
                 ?>
                 </table>
+                </div>
             </div>
         </div>
-    </div>
 
-    <center>
-        <hr>
-        <h1>Gira 20º Aniversario</h1><br>
-    </center>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <table class="table text-center">
-                    <?php
+        <center>
+            <hr>
+            <h1>Gira 20º Aniversario</h1><br>
+        </center>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <table class="table text-center">
+                        <?php
                         $sql1 = "SELECT id, fecha, lugar FROM gira WHERE YEAR(fecha) <> 2023 ORDER BY fecha ASC";
                         $resultado1 = $conn->query($sql1);
                         if ($resultado1->num_rows > 0) {
@@ -98,10 +98,16 @@ if ($resultado->num_rows > 0) {
                         // Cerrar la conexión a la base de datos
                         $conn->close();
                         ?>
+                </div>
             </div>
         </div>
-    </div>
+        <footer class="bg-dark text-light py-3" style="position: relative;">
+            <div class="container text-center">
+                <p>&copy; Copyright 2023 Sony Music Entertainment España, S.L.
+                    Reservados todos los derechos | Protección de datos | Condiciones generales
+                </p>
+            </div>
+        </footer>
+    </body>
 
-</body>
-
-</html>
+    </html>

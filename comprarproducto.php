@@ -26,19 +26,16 @@ if (!isset($_SESSION["nombre_usuario"])) {
         if (isset($_POST['nombre_producto']) && isset($_POST['precio_producto'])) {
             $nombre = $_POST['nombre_producto'];
             $precio = $_POST['precio_producto'];
+
+            $nombreProductos = implode(", ", $nombre);
+            $precioProductos = implode(", ", $precio);
+
+            echo "Nombres de productos: " . $nombreProductos . "<br>";
+            echo "Precios de productos: " . $precioProductos . "<br>";
         }
         ?>
         <h1>Detalle del Producto</h1>
     </div>
     <br>
     <div class="container d-flex justify-content-center">
-        <p>Nombre: <?php echo $nombre; ?></p>
-    </div>
-    <div class="container d-flex justify-content-center">
-        <p>Precio: <?php echo $precio; ?> €</p>
-        <!-- Aquí podrías agregar más información del producto, como descripción, imagen, etc. -->
-    </div>
-</body>
-
-
-</html>
+        <p>Nombre: <?php

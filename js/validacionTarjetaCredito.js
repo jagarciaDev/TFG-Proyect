@@ -8,7 +8,7 @@ const comprarEntradasBtn = document.getElementById('comprarEntradasBtn');
 function toggleComprarEntradasBtn() {
     const isCardNumberValid = validateCardNumber(cardNumberInput);
     const isCardExpiryValid = cardExpiryInput.value.trim() !== '';
-    const isCardCvvValid = cardCvvInput.value.trim() !== '';
+    const isCardCvvValid = validateCVV(cardCvvInput);
 
     comprarEntradasBtn.disabled = !(isCardNumberValid && isCardExpiryValid && isCardCvvValid);
 }
@@ -20,6 +20,18 @@ function validateCardNumber(input) {
 
     input.setCustomValidity(
         isValid ? '' : 'El número de tarjeta debe contener exactamente 16 dígitos numéricos.'
+    );
+
+    return isValid;
+}
+
+// Validar que el campo "CVV" solo contenga 3 dígitos numéricos
+function validateCVV(input) {
+    const cvv = input.value.trim();
+    const isValid = /^\d{3}$/.test(cvv);
+
+    input.setCustomValidity(
+        isValid ? '' : 'El CVV debe contener exactamente 3 dígitos numéricos.'
     );
 
     return isValid;
