@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-06-2023 a las 10:35:15
+-- Tiempo de generación: 03-06-2023 a las 18:08:53
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -42,7 +42,9 @@ CREATE TABLE `entradasconciertos` (
 --
 
 INSERT INTO `entradasconciertos` (`id_pedido`, `id_usuario`, `id_gira`, `fecha_pedido`, `lugar`, `fecha`, `num_entradas`) VALUES
-(8, 1, 3, '2023-05-31 14:17:06', 'WiZink Center (Madrid)', '2024-12-06', 6);
+(8, 1, 3, '2023-05-31 14:17:06', 'WiZink Center (Madrid)', '2024-12-06', 6),
+(9, 2, 11, '2023-06-01 08:42:56', 'Sala Custom (Sevilla)', '2024-06-07', 4),
+(10, 1, 1, '2023-06-01 08:57:26', 'BrillaTorrevieja (Torrevieja)', '2023-08-03', 3);
 
 -- --------------------------------------------------------
 
@@ -198,7 +200,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `entradasconciertos`
 --
 ALTER TABLE `entradasconciertos`
-  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `gira`
