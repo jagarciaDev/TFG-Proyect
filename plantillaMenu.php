@@ -96,6 +96,10 @@
                     <li>
                         <hr class="dropdown-divider">
                     </li>
+                    <li><a class="dropdown-item" href="misevaluaciones.php"><i class="bi bi-star-fill"></i></i> Mis Evaluaciones</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
                     <li><a class="dropdown-item" href="logout.php"><i class="bi bi-door-open-fill"></i> Cerrar sesión</a></li>
                 </ul>
                 </li>
