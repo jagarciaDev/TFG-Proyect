@@ -63,13 +63,20 @@ $result = mysqli_query($conn, $sql);
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-warning" onclick="eliminarCarrito()">Eliminar carrito</button>
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary">Comprar</button>
+                    <button type="button" class="btn btn-primary">Agregar al carrito</button>
+                    <button type="button" class="btn btn-success" onclick="comprar()">Comprar</button>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+        function comprar() {
+            const productos = productosEnCarrito.map(producto => `${producto.nombre}:${producto.precio}`);
+            const url = "comprarproducto.php?productos=" + encodeURIComponent(productos.join(","));
 
+            window.location.href = url;
+        }
+    </script>
     <hr>
     <main>
         <section id="fotos" class="py-2">
@@ -106,7 +113,45 @@ $result = mysqli_query($conn, $sql);
             </div>
         </section>
     </main>
-    <script src="js/tienda.js"></script>
+    <main>
+        <section id="discos" class="py-2">
+            <h2 class="text-center mb-4">Compra los discos de Melendi</h2>
+            <div class="row justify-content-center">
+                <?php
+                // Consulta SQL para obtener los datos de la tabla de productos para mostrar CAMISETAS
+                $sql1 = "SELECT * FROM productos WHERE descripcion = 'Disco'";
+
+                // Ejecutar la consulta y obtener el resultado
+                $result1 = mysqli_query($conn, $sql1);
+                // Verificar si hay registros devueltos
+                if (mysqli_num_rows($result1) > 0) {
+                    // Recorrer los registros y mostrar los datos
+                    while ($row = mysqli_fetch_assoc($result1)) {
+                ?>
+                        <div class="col-md-4 col-lg-3 mb-4">
+                            <div class="card">
+                                <img src="images/tienda/<?php echo $row["nombre_producto"]; ?>.jpg" class="card-img-top" alt="Discos">
+                                <div class="card-body">
+                                    <h5 class="card-title text-center"><?php echo $row["nombre_producto"]; ?></h5>
+                                    <p class="card-text text-center"><?php echo $row["precio"]; ?>€</p>
+                                    <div class="card-body text-center">
+                                        <form action="comprarproducto.php" method="POST" class="d-grid">
+                                            <input type="hidden" name="nombre_producto" value="<?php echo $row["nombre_producto"]; ?>">
+                                            <input type="hidden" name="precio_producto" value="<?php echo $row["precio"]; ?>">
+                                            <button type="button" class="btn btn-primary agregar-carrito" data-producto="<?php echo $row["nombre_producto"]; ?>" data-precio="<?php echo $row["precio"]; ?>"><i class="bi bi-bag-heart-fill"></i> Agregar al carrito</button>
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                <?php
+                    }
+                } else {
+                    echo "No se encontraron productos.";
+                }
+                ?>
+                <script src="js/tienda.js"></script>
 </body>
 
 </html>

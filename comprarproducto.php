@@ -20,22 +20,22 @@ if (!isset($_SESSION["nombre_usuario"])) {
 <body>
     <div class="container d-flex justify-content-center">
         <?php
-        $nombre = "";
-        $precio = "";
+        if (isset($_GET['productos'])) {
+            $productos = $_GET['productos'];
+            $productosArray = explode(",", $productos);
+            echo "<h2>Carrito de Compras:</h2>";
+            echo "<ul>";
+            foreach ($productosArray as $producto) {
+                $productoInfo = explode(":", $producto);
+                $nombre = $productoInfo[0];
+                $precio = $productoInfo[1];
 
-        if (isset($_POST['nombre_producto']) && isset($_POST['precio_producto'])) {
-            $nombre = $_POST['nombre_producto'];
-            $precio = $_POST['precio_producto'];
-
-            $nombreProductos = implode(", ", $nombre);
-            $precioProductos = implode(", ", $precio);
-
-            echo "Nombres de productos: " . $nombreProductos . "<br>";
-            echo "Precios de productos: " . $precioProductos . "<br>";
+                echo "<li>$nombre - Precio: $precio €</li>";
+            }
+            echo "</ul>";
         }
         ?>
-        <h1>Detalle del Producto</h1>
     </div>
-    <br>
-    <div class="container d-flex justify-content-center">
-        <p>Nombre: <?php
+</body>
+
+</html>
