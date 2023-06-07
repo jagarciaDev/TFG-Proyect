@@ -18,18 +18,18 @@ include("gira.php");
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-    document.addEventListener('dragstart', function(evt) {
-        if (evt.target.tagName == 'IMG') {
-            evt.preventDefault();
-        }
-    });
+        document.addEventListener('dragstart', function(evt) {
+            if (evt.target.tagName == 'IMG') {
+                evt.preventDefault();
+            }
+        });
     </script>
     <style>
-    * {
+        * {
 
-        font-family: "Pathway Gothic One";
-        font-size: 22px;
-    }
+            font-family: "Pathway Gothic One";
+            font-size: 22px;
+        }
     </style>
 </head>
 
@@ -49,18 +49,21 @@ include("gira.php");
                         <h5 class="modal-title" id="exampleModalLabel">Agregar concierto</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <form id="concertForm" method="POST" action="insertarConcierto.php">
+                    <form id="concertForm" method="POST" action="insertarConcierto.php" enctype="multipart/form-data">
                         <div class="modal-body">
                             <div class="form-group">
                                 <label for="concertName">Lugar del concierto</label>
-                                <input type="text" class="form-control" id="concertName" name="concertName"
-                                    placeholder="Ingrese el nombre del concierto">
+                                <input type="text" class="form-control" id="concertName" name="concertName" placeholder="Ingrese el nombre del concierto">
                             </div>
                             <div class="form-group">
                                 <label for="concertDate">Fecha del concierto</label>
-                                <input type="date" class="form-control" id="concertDate" name="concertDate"
-                                    min="<?= date('Y-m-d') ?>">
+                                <input type="date" class="form-control" id="concertDate" name="concertDate" min="<?= date('Y-m-d') ?>">
                             </div>
+                            <div class="mb-3">
+                                <label for="imagen" class="form-label">Cartel del concierto</label>
+                                <input class="form-control" type="file" id="imagen" accept="image/*" name="imagen">
+                            </div>
+
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>

@@ -22,7 +22,7 @@
     include("plantillaMenu.php");
     ?>
     <div class="container">
-        <form id="formulario" method="post" action="inicioSesion.php">
+        <form id="formulario" method="POST" action="inicioSesion.php" enctype="multipart/form-data">
 
             <label for="nombre_apellidos">Nombre y Apellidos:</label>
             <input type="text" id="nombre_apellidos" name="nombre_apellidos" autocomplete="off">
@@ -36,6 +36,8 @@
             <label for="email">Correo Electrónico:</label>
             <input type="text" id="correo" name="correo" autocomplete="off">
 
+            <label for="imagen" class="form-label">Foto de perfil:</label>
+            <input class="form-control" type="file" id="foto_perfil" accept="image/*" name="foto_perfil">
 
             <br>
             <p>¿Tienes cuenta? <a href="login.php">Inicia Sesión</a>.</p>
