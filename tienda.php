@@ -118,7 +118,7 @@ $result = mysqli_query($conn, $sql);
             <h2 class="text-center mb-4">Compra los discos de Melendi</h2>
             <div class="row justify-content-center">
                 <?php
-                // Consulta SQL para obtener los datos de la tabla de productos para mostrar CAMISETAS
+                // Consulta SQL para obtener los datos de la tabla de productos para mostrar DISCOS
                 $sql1 = "SELECT * FROM productos WHERE descripcion = 'Disco'";
 
                 // Ejecutar la consulta y obtener el resultado
@@ -140,7 +140,6 @@ $result = mysqli_query($conn, $sql);
                                             <input type="hidden" name="precio_producto" value="<?php echo $row["precio"]; ?>">
                                             <button type="button" class="btn btn-primary agregar-carrito" data-producto="<?php echo $row["nombre_producto"]; ?>" data-precio="<?php echo $row["precio"]; ?>"><i class="bi bi-bag-heart-fill"></i> Agregar al carrito</button>
                                         </form>
-
                                     </div>
                                 </div>
                             </div>
@@ -151,7 +150,10 @@ $result = mysqli_query($conn, $sql);
                     echo "No se encontraron productos.";
                 }
                 ?>
-                <script src="js/tienda.js"></script>
+            </div>
+        </section>
+    </main>
+    <script src="js/tienda.js"></script>
 </body>
 
 </html>
