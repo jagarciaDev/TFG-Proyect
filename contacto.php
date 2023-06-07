@@ -21,8 +21,34 @@
 <body>
     <?php include("plantillaMenu.php"); ?>
     <center>
-        <h2 style="text-align: center;margin-bottom:10px;">Puedes encontrarnos en:</h2>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3039.619058247441!2d-3.721367723536828!3d40.372970358300826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4227a0c76de045%3A0xb86372c70d662304!2sIES%20P%C3%ADo%20Baroja!5e0!3m2!1ses!2ses!4v1684331019433!5m2!1ses!2ses" width="1000" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        <div style="display: flex;">
+            <div style="flex: 1;">
+                <h2 style="text-align: center;margin-bottom:10px;">Puedes encontrarnos en:</h2>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3039.619058247441!2d-3.721367723536828!3d40.372970358300826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4227a0c76de045%3A0xb86372c70d662304!2sIES%20P%C3%ADo%20Baroja!5e0!3m2!1ses!2ses!4v1684331019433!5m2!1ses!2ses" width="640" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div style="flex: 1;">
+                <form method="POST" action="enviar_correo.php">
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre:</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="correo" class="form-label">Correo electrónico:</label>
+                        <input type="email" class="form-control" id="correo" name="correo" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="mensaje" class="form-label">Mensaje:</label>
+                        <textarea class="form-control" id="mensaje" name="mensaje" required></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
         <hr>
         <h2 style="text-align: center;margin-bottom:10px;">Sigue a Melendi en redes sociales</h2>
         <a href="https://www.facebook.com/Melendi/?locale=es_ES" target="_blank" style="color: black;"><i class="bi bi-facebook logo"></i></a>
