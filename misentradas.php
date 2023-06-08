@@ -70,6 +70,7 @@
             echo "<td class='text-center'>" . $row["gradageneral"] . "</td>";
             echo "<td class='text-center'>" . $row["anfiteatro"] . "</td>";
             echo "<td class='text-center'>" . $fechaPedidoFormateada . "</td>";
+            echo "<td class='text-center'><button type='button' class='btn btn-primary' onclick=\"window.location.href='generarPDFentradas.php?frontstage=" . $row['frontstage'] . "&gradageneral=" . $row['gradageneral'] . "&anfiteatro=" . $row['anfiteatro'] . "'\">Descargar entradas</button></td>";
             echo "</tr>";
 
             echo "<script>";
