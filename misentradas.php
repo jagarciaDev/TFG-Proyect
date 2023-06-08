@@ -41,7 +41,9 @@
         echo "<tr>";
         echo "<th class='text-center'>Fecha</th>";
         echo "<th class='text-center'>Lugar</th>";
-        echo "<th class='text-center'>Nº Entradas</th>";
+        echo "<th class='text-center'>Front Stage</th>";
+        echo "<th class='text-center'>Grada General</th>";
+        echo "<th class='text-center'>Anfiteatro</th>";
         echo "<th class='text-center'>Fecha de compra</th>";
         echo "</tr>";
         echo "</thead>";
@@ -64,7 +66,9 @@
             echo "<tr>";
             echo "<td class='text-center'>" . $fechaFormateada . " <span id='cuenta-regresiva-" . $row["id_pedido"] . "'></span></td>";
             echo "<td class='text-center'>" . $row["lugar"] . "</td>";
-            echo "<td class='text-center'>" . $row["num_entradas"] . "</td>";
+            echo "<td class='text-center'>" . $row["frontstage"] . "</td>";
+            echo "<td class='text-center'>" . $row["gradageneral"] . "</td>";
+            echo "<td class='text-center'>" . $row["anfiteatro"] . "</td>";
             echo "<td class='text-center'>" . $fechaPedidoFormateada . "</td>";
             echo "</tr>";
 

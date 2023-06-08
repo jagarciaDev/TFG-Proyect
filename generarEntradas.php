@@ -102,12 +102,9 @@ if (isset($_POST['select1']) && isset($_POST['select2']) && isset($_POST['select
     }
 
 
-    $total_entradas = $num_pags_select1 + $num_pags_select2 + $num_pags_select3;
-
     // Consulta SQL para insertar el pedido
-    $sql = "INSERT INTO entradasconciertos (id_usuario, id_gira, lugar, fecha, num_entradas) 
-    VALUES ($idUsuario, $idConcierto, '$lugar', '$fecha', $total_entradas)";
-    // En el ejemplo, se asume que el id_gira para todas las entradas es 1, pero puedes ajustarlo según tu lógica de negocio
+    $sql = "INSERT INTO entradasconciertos (id_usuario, id_gira, lugar, fecha, frontstage, gradageneral, anfiteatro) 
+    VALUES ($idUsuario, $idConcierto, '$lugar', '$fecha', '$num_pags_select1', '$num_pags_select2', '$num_pags_select3')";
 
     if ($conn->query($sql) === TRUE) {
         echo "El pedido se ha guardado correctamente.";
