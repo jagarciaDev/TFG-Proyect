@@ -1,5 +1,5 @@
 <?php
-session_start();
+include("plantillaMenu.php");
 ?>
 
 <!DOCTYPE html>
@@ -9,7 +9,10 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0/css/bootstrap.min.css">
-    <title>Juego de Adivinar Palabra</title>
+    <title>Adivina la canción | Melendi Página Oficial</title>
+
+    <!-- Icono página -->
+    <link rel="shortcut icon" href="images/portadaUltimoDisco.ico" />
 
     <!-- Link Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -18,12 +21,14 @@ session_start();
 </head>
 
 <body>
+
+
     <div class="container">
         <h1>Juego de Adivinar Palabra</h1>
 
         <?php
         // Palabras para adivinar
-        $palabras = array("melendi");
+        $palabras = array("CaminandoPorlaVida", "ChequealPortamor", "DestinooCasualidad", "LaPromesa");
 
         // Función para seleccionar una palabra al azar
         function seleccionarPalabra($palabras)
