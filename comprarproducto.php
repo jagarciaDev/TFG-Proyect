@@ -1,9 +1,51 @@
 <?php
 include("plantillaMenu.php");
 
+// Check if the user is logged in
 if (!isset($_SESSION["nombre_usuario"])) {
     header("Location: login.php");
     exit();
+}
+
+// Database connection (replace with your own credentials)
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "tfg";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$idUsuario = $_SESSION['id'];
+
+// Insert into "pedidos" table
+if (isset($_POST["comprar"])) {
+    $productos = $_GET['productos'];
+    $productosArray = explode(",", $productos);
+
+    $total = 0;
+    $pedidoInfo = '';
+
+    foreach ($productosArray as $producto) {
+        $productoInfo = explode(":", $producto);
+        $nombre = $productoInfo[0];
+        $precio = $productoInfo[1];
+        $total += $precio;
+
+        $pedidoInfo .= "$nombre - Precio: $precio €\n";
+    }
+
+    // Get the current date and time
+    $fechaCompra = date('Y-m-d H:i:s');
+
+    // Prepare and execute the SQL query
+    $stmt = $conn->prepare("INSERT INTO pedidos (id_usuario, nombre_producto, precio, fecha_compra) VALUES ('$idUsuario',?, ?, ?)");
+    $stmt->bind_param("sds", $pedidoInfo, $total, $fechaCompra);
+    $stmt->execute();
+    $stmt->close();
 }
 ?>
 
@@ -24,7 +66,7 @@ if (!isset($_SESSION["nombre_usuario"])) {
 </head>
 
 <body>
-    <form action="crearPedido.php" method="POST">
+    <form action="" method="POST">
 
         <div class="container text-center">
             <?php
@@ -42,15 +84,8 @@ if (!isset($_SESSION["nombre_usuario"])) {
                         echo "<p>$nombre - Precio: $precio €</p>";
                     }
 
-                    $total = 0; // Variable para almacenar el total
-                    foreach ($productosArray as $producto) {
-                        $productoInfo = explode(":", $producto);
-                        $precio = $productoInfo[1];
-                        $total += $precio; // Sumar al total el precio del producto actual
-                    }
-
                     echo "<br>";
-                    echo "<h3>Total a pagar: $total €</h3>"; // Mostrar el total a pagar
+                    echo "<h3>Total a pagar: $total €</h3>";
                 } else {
                     echo "<h2>Carrito de Compras:</h2>";
                     echo "No hay productos para mostrar.";
@@ -79,7 +114,7 @@ if (!isset($_SESSION["nombre_usuario"])) {
                 <input type="text" class="form-control" id="card_cvv" name="card_cvv" pattern="[0-9]{3}" inputmode="numeric" placeholder="Introduce 3 digitos" required>
             </div>
         </div>
-        <button type="submit" class="btn btn-primary" name="comprar" id="comprarEntradasBtn" disabled>Comprar productos</button>
+        <button type="submit" class="btn btn-primary" name="comprar" id="comprarEntradasBtn">Comprar productos</button>
         <button type='button' class='btn btn-warning' onclick='window.history.back()'>Volver</button>
     </form>
 

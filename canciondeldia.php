@@ -24,7 +24,7 @@ include("plantillaMenu.php");
 
 
     <div class="container">
-        <h1>Juego de Adivinar Palabra</h1>
+        <h1>Juego de Adivinar la Canción</h1>
 
         <?php
         // Palabras para adivinar

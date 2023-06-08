@@ -50,9 +50,13 @@ $sql = "INSERT INTO entradasconciertos (id_usuario, id_gira, lugar, fecha, front
     VALUES ($idUsuario, $idConcierto, '$lugar', '$fecha', '$num_pags_select1', '$num_pags_select2', '$num_pags_select3')";
 
 if ($conn->query($sql) === TRUE) {
-    echo "El pedido se ha guardado correctamente.";
+    echo "<br><center><h3 class='text-success'>El pedido se ha guardado correctamente.</h3>";
+    echo "<br><center>";
+    echo "<a href='index.php' class='btn btn-secondary me-2'>Ir a inicio <i class='bi bi-door-open-fill'></i></a>";
+    echo "<a href='misentradas.php' class='btn btn-primary ms-2'>Mis entradas <i class='bi bi-ticket-fill'></i></a>";
+    echo "</center>";
 } else {
-    echo "Error al guardar el pedido: " . $conn->error;
+    echo "<center><h3 class='text-danger'>Error al guardar el pedido: " . $conn->error . "</h3></center>";
 }
 
 $conn->close();
