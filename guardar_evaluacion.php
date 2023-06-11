@@ -7,7 +7,6 @@ if (!isset($_SESSION['id'])) {
 
 // Recuperar el valor seleccionado por el usuario
 $estrellas = $_POST['estrellas'];
-
 $nombredisco = $_POST['nombre_disco'];
 
 // Obtener el ID del usuario de la sesión
@@ -26,11 +25,21 @@ if ($conn->connect_error) {
     die("Error al conectar con la base de datos: " . $conn->connect_error);
 }
 
-// Insertar el valor seleccionado en la base de datos junto con el ID del usuario
-$sql = "INSERT INTO tabla_evaluaciones (estrellas, id_usuario, nombre_disco) VALUES ('$estrellas', '$usuario_id', '$nombredisco')";
+// Verificar si ya existe una evaluación para el usuario y el disco
+$sql_verificar = "SELECT * FROM tabla_evaluaciones WHERE id_usuario = '$usuario_id' AND nombre_disco = '$nombredisco'";
+$resultado_verificar = $conn->query($sql_verificar);
 
-if ($conn->query($sql) === TRUE) {
-    header("Location: discografia.php");;
+if ($resultado_verificar->num_rows > 0) {
+    // Ya existe una evaluación para ese usuario y ese disco
+    header("Location: falloevaluaciones.php");
+    exit;
+}
+
+// Insertar el valor seleccionado en la base de datos junto con el ID del usuario
+$sql_insertar = "INSERT INTO tabla_evaluaciones (estrellas, id_usuario, nombre_disco) VALUES ('$estrellas', '$usuario_id', '$nombredisco')";
+
+if ($conn->query($sql_insertar) === TRUE) {
+    header("Location: discografia.php");
 } else {
     echo "Error al guardar la evaluación en la base de datos: " . $conn->error;
 }

@@ -20,6 +20,7 @@
             <tr>
                 <th>Estrellas</th>
                 <th>Nombre del Disco</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -39,7 +40,7 @@
 
             $idUsuario = $_SESSION["id"];
 
-            $sql = "SELECT nombre_disco, estrellas, usuarios.usuario 
+            $sql = "SELECT evaluacion_id, nombre_disco, estrellas, usuarios.usuario 
                     FROM tabla_evaluaciones 
                     INNER JOIN usuarios ON tabla_evaluaciones.id_usuario = usuarios.id_usuario
                     WHERE tabla_evaluaciones.id_usuario = $idUsuario 
@@ -53,10 +54,11 @@
                     echo "<tr>";
                     echo "<td>" . $row["estrellas"] . "⭐</td>";
                     echo "<td>" . $row["nombre_disco"] . "</td>";
+                    echo "<td><a href='eliminarEvaluacion.php?evaluacion_id=" . $row["evaluacion_id"] . "'><button class='btn btn-danger'>Eliminar evaluación</button></a></td>";
                     echo "</tr>";
                 }
             } else {
-                echo "<tr><td colspan='3'>No hay evaluaciones disponibles</td></tr>";
+                echo "<tr><td colspan='3'>No hay evaluaciones que mostrar</td></tr>";
             }
             // Cerrar la conexión a la base de datos
             $conn->close();
