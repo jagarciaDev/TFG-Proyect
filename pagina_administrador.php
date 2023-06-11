@@ -1,6 +1,14 @@
 <?php
+ob_start(); // Iniciar el búfer de salida
+
 include("plantillaMenu.php");
 
+if (!isset($_SESSION['nombre_usuario']) || $_SESSION['nombre_usuario'] !== "admin") {
+    header("Location: login.php");
+    exit;
+}
+
+ob_end_flush(); // Enviar la salida almacenada en el búfer al navegador
 
 // Conexión a la base de datos
 $servername = "localhost";
@@ -17,6 +25,7 @@ if ($conn->connect_error) {
 $sql = "SELECT id, fecha, lugar FROM gira WHERE YEAR(fecha) = 2023 ORDER BY fecha ASC";
 $resultado = $conn->query($sql);
 if ($resultado->num_rows > 0) {
+
 
 ?>
     <!DOCTYPE html>

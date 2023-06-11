@@ -32,28 +32,57 @@ if (isset($_GET['frontstage']) && isset($_GET['gradageneral']) && isset($_GET['a
 
     $pdf = new PDF();
 
-    // Generar las páginas para select1
+    // Generar las páginas para frontstage
     for ($i = 1; $i <= $frontstage; $i++) {
         $pdf->AddPage();
         $pdf->SetFont('Arial', 'B', 16);
-        $pdf->Cell(0, 20, 'Entrada para select1', 0, 1, 'C');
-        $pdf->Cell(0, 10, 'Descripción de la entrada para select1: ' . $i, 0, 1, 'C');
+        $pdf->Cell(0, 20, 'Entrada para Front Stage', 0, 1, 'C');
+        $pdf->Cell(0, 10, 'Numero de entrada: ' . $i, 0, 1, 'C');
+        $pdf->Cell(0, 10, 'Horario de apertura de puertas: 19h', 0, 1, 'C', false, '', 8);
+        $pdf->Cell(0, 10, 'Horario de inicio de concierto: 21h', 0, 1, 'C', false, '', 8);
+
+
+        // Agregar descripción de la entrada
+        $pdf->SetFont('Arial', '', 12);
+        $pdf->MultiCell(0, 10, 'Esta entrada te brinda acceso a la zona Front Stage, donde podras disfrutar de una vista privilegiada del escenario y vivir una experiencia unica en el concierto.', 0, 'J');
+
+        // Agregar imagen
+        $pdf->Image('images/disco11.jpg', $pdf->GetX() + 30, $pdf->GetY() + 10, 150, 0, 'JPEG');
     }
 
-    // Generar las páginas para select2
+
+    // Generar las páginas para grada general
     for ($i = 1; $i <= $gradageneral; $i++) {
         $pdf->AddPage();
         $pdf->SetFont('Arial', 'B', 16);
-        $pdf->Cell(0, 20, 'Entrada para select2', 0, 1, 'C');
-        $pdf->Cell(0, 10, 'Descripción de la entrada para select2: ' . $i, 0, 1, 'C');
+        $pdf->Cell(0, 20, 'Entrada para Grada General', 0, 1, 'C');
+        $pdf->Cell(0, 10, 'Numero de entrada: ' . $i, 0, 1, 'C');
+        $pdf->Cell(0, 10, 'Horario de apertura de puertas: 19h', 0, 1, 'C', false, '', 8);
+        $pdf->Cell(0, 10, 'Horario de inicio de concierto: 21h', 0, 1, 'C', false, '', 8);
+
+        // Agregar descripción de la entrada
+        $pdf->SetFont('Arial', '', 12);
+        $pdf->MultiCell(0, 10, 'Esta entrada te brinda acceso a la Grada General, desde donde podras disfrutar del concierto con una vista panoramica del escenario y vivir una experiencia unica.', 0, 'J');
+
+        // Agregar imagen
+        $pdf->Image('images/disco11.jpg', $pdf->GetX() + 30, $pdf->GetY() + 10, 150, 0, 'JPEG');
     }
 
-    // Generar las páginas para select3
+    // Generar las páginas para anfiteatro
     for ($i = 1; $i <= $anfiteatro; $i++) {
         $pdf->AddPage();
         $pdf->SetFont('Arial', 'B', 16);
-        $pdf->Cell(0, 20, 'Entrada para select3', 0, 1, 'C');
-        $pdf->Cell(0, 10, 'Descripción de la entrada para select3: ' . $i, 0, 1, 'C');
+        $pdf->Cell(0, 20, 'Entrada para Anfiteatro', 0, 1, 'C');
+        $pdf->Cell(0, 10, 'Numero de entrada: ' . $i, 0, 1, 'C');
+        $pdf->Cell(0, 10, 'Horario de apertura de puertas: 19h', 0, 1, 'C', false, '', 8);
+        $pdf->Cell(0, 10, 'Horario de inicio de concierto: 21h', 0, 1, 'C', false, '', 8);
+
+        // Agregar descripción de la entrada
+        $pdf->SetFont('Arial', '', 12);
+        $pdf->MultiCell(0, 10, 'Esta entrada te brinda acceso al Anfiteatro, donde podras disfrutar del concierto con una vista elevada y una excelente acustica. Vive la emoción de la musica rodeado de un ambiente inigualable.', 0, 'J');
+
+        // Agregar imagen
+        $pdf->Image('images/disco11.jpg', $pdf->GetX() + 30, $pdf->GetY() + 10, 150, 0, 'JPEG');
     }
 
     // Generar el archivo PDF
