@@ -1,5 +1,4 @@
 <?php
-
 include("plantillaMenu.php");
 
 // Configuración de la conexión a la base de datos
@@ -38,7 +37,8 @@ if (isset($_POST['comprar'])) {
 
         // Ejecutar la consulta
         if (mysqli_query($conn, $sql)) {
-            echo "Producto insertado en la base de datos: $nombre - Precio: $precio € - Fecha de compra: $fechaCompra<br>";
+            header("Location: index.php");
+            exit(); // Salir del script después de redirigir
         } else {
             echo "Error al insertar producto: " . mysqli_error($conn);
         }

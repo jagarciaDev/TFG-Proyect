@@ -1,4 +1,5 @@
 <?php
+ob_start();
 include("plantillaMenu.php");
 
 // Check if the user is logged in
@@ -46,7 +47,12 @@ if (isset($_POST["comprar"])) {
     $stmt->bind_param("sds", $pedidoInfo, $total, $fechaCompra);
     $stmt->execute();
     $stmt->close();
+
+    // Redireccionar a la página "compraaceptada.php"
+    header("Location: tienda.php");
+    exit();
 }
+ob_end_flush();
 ?>
 
 <!DOCTYPE html>
@@ -76,16 +82,19 @@ if (isset($_POST["comprar"])) {
 
                 if (count($productosArray) > 0) {
                     echo "<h2>Carrito de Compras:</h2>";
+                    $total = 0; // Variable para almacenar el total a pagar
+
                     foreach ($productosArray as $producto) {
                         $productoInfo = explode(":", $producto);
                         $nombre = $productoInfo[0];
                         $precio = $productoInfo[1];
+                        $total += $precio; // Sumar el precio del producto al total
 
                         echo "<p>$nombre - Precio: $precio €</p>";
                     }
 
                     echo "<br>";
-                    echo "<h3>Total a pagar: $total €</h3>";
+                    echo "<h3>Total a pagar: $total €</h3>"; // Mostrar el total a pagar
                 } else {
                     echo "<h2>Carrito de Compras:</h2>";
                     echo "No hay productos para mostrar.";
@@ -95,6 +104,7 @@ if (isset($_POST["comprar"])) {
                 echo "No hay productos para mostrar.";
             }
             ?>
+
         </div>
         <hr>
 
@@ -113,9 +123,9 @@ if (isset($_POST["comprar"])) {
                 <label for="card_cvv" class="form-label">CVV:</label>
                 <input type="text" class="form-control" id="card_cvv" name="card_cvv" pattern="[0-9]{3}" inputmode="numeric" placeholder="Introduce 3 digitos" required>
             </div>
+            <button type="submit" class="btn btn-primary" name="comprar" id="comprarEntradasBtn">Comprar productos</button>
+            <button type='button' class='btn btn-warning' onclick='window.history.back()'>Volver</button>
         </div>
-        <button type="submit" class="btn btn-primary" name="comprar" id="comprarEntradasBtn">Comprar productos</button>
-        <button type='button' class='btn btn-warning' onclick='window.history.back()'>Volver</button>
     </form>
 
     <!-- Bootstrap JS -->
