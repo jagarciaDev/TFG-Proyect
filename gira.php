@@ -30,7 +30,14 @@ if ($resultado->num_rows > 0) {
     </head>
 
     <body>
-        <?php include("plantillaMenu.php"); ?>
+        <?php
+        ob_start();
+        include("plantillaMenu.php");
+        if (isset($_SESSION["id"]) && $_SESSION["id"] == 26) {
+            header("Location: pagina_administrador.php");
+            exit;
+        }
+        ob_end_flush(); ?>
         <center>
             <h1>Gira Festivales 2023</h1><br>
 

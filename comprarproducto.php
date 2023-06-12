@@ -128,8 +128,6 @@ ob_end_flush();
         </div>
     </form>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script src="js/validacionTarjetaCredito.js"></script>
 </body>
 

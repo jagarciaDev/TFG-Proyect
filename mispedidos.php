@@ -10,9 +10,6 @@ include("plantillaMenu.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mis pedidos | Melendi Página Oficial</title>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
-
     <!-- Icono página -->
     <link rel="shortcut icon" href="images/portadaUltimoDisco.ico" />
 </head>
@@ -20,8 +17,6 @@ include("plantillaMenu.php");
 <body>
     <?php
 
-
-    // Database connection (replace with your own credentials)
     $servername = "localhost";
     $username = "root";
     $password = "";
@@ -35,7 +30,6 @@ include("plantillaMenu.php");
 
     $idUsuario = $_SESSION["id"];
 
-    // Fetch pedidos from the database
     $sql = "SELECT * FROM pedidos WHERE id_usuario= '$idUsuario'";
     $result = $conn->query($sql);
     ?>
@@ -82,9 +76,6 @@ include("plantillaMenu.php");
             </tbody>
         </table>
     </div>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
