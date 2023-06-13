@@ -2,9 +2,9 @@
 session_start();
 
 $servername = "localhost";
-$username = "root";
-$passwordbd = "";
-$dbname = "tfg";
+$username = "id20905691_root";
+$passwordbd = "javiTFG123@@";
+$dbname = "id20905691_tfg";
 
 $usuario = $_POST["username"];
 $password = $_POST["password"];

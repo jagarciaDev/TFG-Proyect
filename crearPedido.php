@@ -3,9 +3,9 @@ include("plantillaMenu.php");
 
 // Configuración de la conexión a la base de datos
 $servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "tfg";
+$username = "id20905691_root";
+$password = "javiTFG123@@";
+$dbname = "id20905691_tfg";
 
 // Crear la conexión
 $conn = mysqli_connect($servername, $username, $password, $dbname);

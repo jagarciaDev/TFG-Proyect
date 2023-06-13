@@ -6,7 +6,7 @@ $email = $_POST['correo'];
 $imagenPerfil = $_FILES['foto_perfil']['tmp_name'];
 
 // Conexión a la base de datos
-$conexion = mysqli_connect("localhost", "root", "", "tfg");
+$conexion = mysqli_connect("localhost", "id20905691_root", "javiTFG123@@", "id20905691_tfg");
 if (!$conexion) {
     die("Error de conexión: " . mysqli_connect_error());
 }

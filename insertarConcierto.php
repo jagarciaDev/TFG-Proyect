@@ -19,7 +19,7 @@ if (!empty($imagenConcierto) && is_uploaded_file($imagenConcierto)) {
 }
 
 // Ejemplo de conexión y consulta en MySQLi utilizando consultas preparadas
-$conexion = new mysqli("localhost", "root", "", "tfg");
+$conexion = new mysqli("localhost", "id20905691_root", "javiTFG123@@", "id20905691_tfg");
 
 // Verificar si ya existe un concierto en la misma fecha
 $queryVerificar = "SELECT * FROM gira WHERE fecha = ?";

@@ -13,7 +13,7 @@ if (!isset($_SESSION["nombre_usuario"])) {
 }
 
 //Conexión a BD
-$conexion = mysqli_connect("localhost", "root", "", "tfg");
+$conexion = mysqli_connect("localhost", "id20905691_root", "javiTFG123@@", "id20905691_tfg");
 
 $id = $_GET['id'];
 $sql = "SELECT * FROM gira WHERE id = $id";

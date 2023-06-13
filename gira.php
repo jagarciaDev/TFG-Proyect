@@ -1,9 +1,9 @@
 <?php
 // Conexión a la base de datos
 $servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "tfg";
+$username = "id20905691_root";
+$password = "javiTFG123@@";
+$dbname = "id20905691_tfg";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
